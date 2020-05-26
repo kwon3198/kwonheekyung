@@ -55,7 +55,7 @@ color:#616161;
 line-height:1.5;
 }
 </style>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/resources/js/jquary.min.js"></script>
 <script src="/resources/js/common.js"></script>
 <!-- 사용자 스크립트 -->
 <script>
