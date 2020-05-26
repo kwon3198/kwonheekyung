@@ -18,15 +18,37 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	/**
+	 * * htmltest 페이지 파일 입니다
+	 */
 	@RequestMapping(value = "/htmltest", method = RequestMethod.GET)
 	public String htmltest(Locale locale, Model model) {
+		
 		return "htmltest";
 	}
 	
+	/**
+	 * * WE ARE 페이지 파일 입니다
+	 */
+	@RequestMapping(value = "/weare", method = RequestMethod.GET)
+	public String weare(Locale locale, Model model) {
+		
+		return "weare";
+	}
+	
+	/**
+	 * * WORK 페이지 파일 입니다
+	 */
+	@RequestMapping(value = "/work", method = RequestMethod.GET)
+	public String work(Locale locale, Model model) {
+		
+		return "work";
+	}
 
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
