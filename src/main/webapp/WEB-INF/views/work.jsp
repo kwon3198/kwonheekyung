@@ -17,7 +17,7 @@
 <style>
 /* WORK 영역 CSS */
 .work-section{
-margin0top:73px;
+margin-top:73px;
 }
 .work-section .sec-tit{
 width:90%;
@@ -29,11 +29,11 @@ text-align:center;
 .work-section .work-list li{
 width:100%;
 }
-.worj-section .worj-list li a{
+.work-section .work-list li a{
 display:block;
 position:relative;
 width:100%;
-hright:100%;
+height:100%;
 }
 .work-section .work-list li a:before{
 display:block;
@@ -41,14 +41,14 @@ position:absolute;
 top:0;
 left:0;
 z-index:10;
+width:100%;
 height:100%;
-widgt:100%;
 background:#3f51b5;
 content:"";
 opacity:0;
 transition:all 0.2s;
 }
-.wrok-section .work-list li a:hover:before{
+.work-section .work-list li a:hover:before{
 opacity:0.86;
 }
 .work-section .work-list li .info{
@@ -56,8 +56,28 @@ position:absolute;
 top:0;
 left:23px;
 z-index:20;
-apacity:0;
-transition:all 0.3s;
+opacity:0;
+transition:all 0.8s;
+}
+.work-section .work-list li a:hover .info{
+transform:translateY(23px);
+opacity:1;
+}
+.work-section .work-list li .info h3{
+margin-bottom:8px;
+font-size:23px;
+color:#fff;
+font-weight:normal;
+}
+.work-section .work-list li .info span{
+font-size:11px;
+color:#fff;
+}
+.work-section .work-list li img{
+display:block;
+width:100%;
+max-width:100%;
+height:auto;
 }
 </style>
 <script src="/resources/js/jquary.min.js"></script>
@@ -86,60 +106,84 @@ transition:all 0.3s;
 			<span class="menu-toggle-btn"> <span></span> <span></span> <span></span>
 			</span>
 		</header>
-		<section class="work-sectioon cfixed">
-			<h2 class="sec-tit">WORK</h2>
-			<ul class="work-list">
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-				<li><a href="#">
-						<div class="info">
-							<h3>작업1</h3>
-							<span>소스/작업1</span>
-						</div> <img src="/resources/images/sun.jpg" alt>
-				</a></li>
-			</ul>
-		</section>
-		<footer class="footer">
+<section class="work-section cfixed">
+<h2 class="sec-tit">WORK</h2>
+<ul class="work-list">
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<div class="info">
+<h3>작업1</h3>
+<span>소스/작업1</span>
+</div>
+<img src="/resources/images/sun.jpg" alt="">
+</a>
+</li>
+</ul>
+</section>
+<footer class="footer">
 			<p class="copyright">LOGO</p>
 		</footer>
 	</div>
