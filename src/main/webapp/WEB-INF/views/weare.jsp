@@ -15,63 +15,65 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/reset.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
 <style>
-/* WE ARE 슬라이더 영역 CSS */
-.display-section{
-margin-top:59px;
+/* WE ARE 페이지 영역 CSS */
+.display-section {
+margin-top:30px;
 text-align:center;
 }
-.display-section .sec-tit{
+.display-section .sec-tit {
 margin-bottom:30px;
 }
-.display-section .desc{
+.display-section .desc {
 font-family:"굴림";
 color:#616161;
 line-height:1.9;
 }
-
-/* WE ARE 내용 영역 CSS */
-.promotion-section{
+/* We Are 내용 영역 CSS */
+.promotion-section {
 margin-top:68px;
 }
-.promotion-section .promo-list li{
+.promotion-section .promo-list li {
 margin-top:52px;
 text-align:center;
 }
-.promotion-section .promo-list li:first-child{
-margin-top:0;
+.promotion-section .promo-list li:first-child {
+margin-top: 0px;
 }
-.promotion-section .promo-list li img{
-height:52px;
+.promotion-section .promo-list li img {
+height:200px;
 }
-.promotion-section .promo-list li h3{
-margin:29px 0 29px 0;
+.promotion-section .promo-list li h3 {
+margin:29px 0 20px 0;
 color:#3f51b5;
 font-weight:normal;
 }
-.promotion-ssection .promo-list li p{
+.promotion-section .promo-list li p {
 font-size:14px;
-font-family:"돋음";
+font-family:"궁서";
 color:#616161;
 line-height:1.5;
 }
-@media all and (min-width:768px){
-/* 태블릿 WE ARE 영역 CSS */
-.display-section{
+/* 태블릿용 CSS */
+@media all and (min-width:768px) {
+.display-section {
 margin-top:95px;
+
 }
-/* 태블릿 WE ARE 내용 영역 CSS */
-.promotion-section{
+/* 태블릿 WE ARE 내용 영역 */
+.promotion-section {
 margin-top:110px;
 }
-.promotion-section .promo-list li{
-float:left;
-widgt:23.046875%;
-/* 177px / 768px */
-margin-left:2.604166666666667%;
+.promotion-section .promo-list li img {
+height:100px;
+}
+.promotion-section .promo-list li {
+float:left; /* 세로로 나열된 컨텐츠를 가로로 배치 하는 역할 */
+width:23.046875%; /* 177px / 768px */ 
+margin-left:2.60416666666667%;
 /* 20px / 768px */
 margin-top:0;
 }
-.promotion-section .promo-list li:first-child{
+.promotion-section .promo-list li:first-child {
 margin-left:0;
 }
 }
@@ -113,27 +115,31 @@ margin-left:0;
 			</section>
 
 			<section class="promotion-section">
-				<div class="container">
+			<div class="container">
 					<ul class="promo-list">
 						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
 								alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
-								<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
+						</a></li>
+						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
 								alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
-								<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
+						</a></li>
+						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
 								alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
-								<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
+						</a></li>
+						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
 								alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
 						</a></li>
 					</ul>
 				</div>
+				
 			</section>
 
 		</section>
