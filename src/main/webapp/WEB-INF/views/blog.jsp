@@ -74,6 +74,22 @@
 		margin-left: 0;
 	}
 }
+/* PC용 CSS */
+@media all and (min-width:1132px) {
+/* PC BLOG 영역 CSS */
+	.blog-section .sec-tit{
+	float:left;
+	margin-bottom:0;
+	}
+	.blog-section .blog-list{
+	float:right;
+	width:74.5583038869258%;
+	}
+	.blog-section .blog-list li{
+	width:31.75355450236967%;
+	margin-left:2.369668246445498%;
+	}
+}
 </style>
 <script src="/resources/js/jquary.min.js"></script>
 <script src="/resources/js/common.js"></script>

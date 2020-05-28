@@ -97,7 +97,17 @@ height:auto;
 	}
 	.work-section .work-list li a:hover .info{
 	transform:translateY(37px);
+	}
 }
+/* PC용 CSS */
+	@media all and (min-width:1132px){
+/* PC WORK 영역 CSS */
+	.work-section .sec-tit{
+	text-align:left;
+	}
+	.work-section .work-list li{
+	width:25%;
+	}
 }
 
 </style>
