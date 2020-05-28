@@ -17,108 +17,112 @@
 <style>
 /* WE ARE 페이지 영역 CSS */
 .display-section {
-margin-top:30px;
-text-align:center;
+	margin-top: 30px;
+	text-align: center;
 }
+
 .display-section .sec-tit {
-margin-bottom:30px;
+	margin-bottom: 30px;
 }
+
 .display-section .desc {
-font-family:"굴림";
-color:#616161;
-line-height:1.9;
+	font-family: "굴림";
+	color: #616161;
+	line-height: 1.9;
 }
 /* We Are 내용 영역 CSS */
 .promotion-section {
-margin-top:68px;
+	margin-top: 68px;
 }
+
 .promotion-section .promo-list li {
-margin-top:52px;
-text-align:center;
+	margin-top: 52px;
+	text-align: center;
 }
+
 .promotion-section .promo-list li:first-child {
-margin-top: 0px;
+	margin-top: 0px;
 }
+
 .promotion-section .promo-list li img {
-height:200px;
+	height: 200px;
 }
+
 .promotion-section .promo-list li h3 {
-margin:29px 0 20px 0;
-color:#3f51b5;
-font-weight:normal;
+	margin: 29px 0 20px 0;
+	color: #3f51b5;
+	font-weight: normal;
 }
+
 .promotion-section .promo-list li p {
-font-size:14px;
-font-family:"궁서";
-color:#616161;
-line-height:1.5;
+	font-size: 14px;
+	font-family: "궁서";
+	color: #616161;
+	line-height: 1.5;
 }
 /* 태블릿용 CSS */
 @media all and (min-width:768px) {
-.display-section {
-margin-top:95px;
-
-}
-/* 태블릿 WE ARE 내용 영역 */
-.promotion-section {
-margin-top:110px;
-}
-.promotion-section .promo-list li img {
-height:100px;
-}
-.promotion-section .promo-list li {
-float:left; /* 세로로 나열된 컨텐츠를 가로로 배치 하는 역할 */
-width:23.046875%; /* 177px / 768px */ 
-margin-left:2.60416666666667%;
-/* 20px / 768px */
-margin-top:0;
-}
-.promotion-section .promo-list li:first-child {
-margin-left:0;
-}
+	.display-section {
+		margin-top: 95px;
+	}
+	/* 태블릿 WE ARE 내용 영역 */
+	.promotion-section {
+		margin-top: 110px;
+	}
+	.promotion-section .promo-list li img {
+		height: 100px;
+	}
+	.promotion-section .promo-list li {
+		float: left; /* 세로로 나열된 컨텐츠를 가로로 배치 하는 역할 */
+		width: 23.046875%; /* 177px / 768px */
+		margin-left: 2.60416666666667%;
+		/* 20px / 768px */
+		margin-top: 0;
+	}
+	.promotion-section .promo-list li:first-child {
+		margin-left: 0;
+	}
 }
 /* PC용 CSS */
-@media all and (min-width:1132px){
-/*PC WE ARE 영역 CSS */
-.display-section{
-textalign:left;
+@media all and (min-width:1132px) {
+	/*PC WE ARE 영역 CSS */
+	.display-section {
+		textalign: left;
+	}
+	.display-section .sec-tit {
+		float: left;
+		margin-bottom: 0;
+	}
+	.display-section .desc {
+		position: relative;
+		float: right;
+		padding-left: 20px;
+		font-family: "바탕";
+		color: #616161;
+		line-height: 1.9;
+	}
+	.display-section .desc:before {
+		display: block;
+		position: absolute;
+		top: 9px;
+		left: -50px;
+		width: 2px;
+		height: 44px;
+		background: #8e8282;
+		content: "";
+	}
+	/* PC WE ARE 내용 영역 CSS */
+	.promotion-section .promo-list li {
+		width: 23.67491166077739%;
+		margin-left: 1.76678445229682%;
+	}
 }
-.display-section .sec-tit{
-float:left;
-margin-bottom:0;
-}
-.display-section .desc{
-position:relative;
-float:right;
-padding-left:20px;
-font-family:"바탕";
-color:#616161;
-line-height:1.9;
-}
-.display-section .desc:before{
-display:block;
-position:absolute;
-top:9px;
-left:-50px;
-width:2px;
-height:44px;
-background: #8e8282;
-content:"";
-}
-/* PC WE ARE 내용 영역 CSS */
-.promotion-section .promo-list li{
-width:23.67491166077739%;
-margin-left:1.76678445229682%;
-}
-
-}
-
 </style>
 <script src="/resources/js/jquary.min.js"></script>
 <script src="/resources/js/common.js"></script>
 <!-- 사용자 스크립트 -->
 <script>
-
+	
 </script>
 <body>
 	<!-- 더미 데이터:CSS작업전 내용 -->
@@ -151,31 +155,31 @@ margin-left:1.76678445229682%;
 			</section>
 
 			<section class="promotion-section">
-			<div class="container">
+				<div class="container">
 					<ul class="promo-list">
-						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
-								alt="">
+						<li><a href="#" onclick="return false"> <img
+								src="/resources/images/sun.jpg" alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
 						</a></li>
-						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
-								alt="">
+						<li><a href="#" onclick="return false"> <img
+								src="/resources/images/sun.jpg" alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
 						</a></li>
-						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
-								alt="">
+						<li><a href="#" onclick="return false"> <img
+								src="/resources/images/sun.jpg" alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
 						</a></li>
-						<li><a href="#" onclick="return false"> <img src="/resources/images/sun.jpg"
-								alt="">
+						<li><a href="#" onclick="return false"> <img
+								src="/resources/images/sun.jpg" alt="">
 								<h3>HOME</h3>
 								<p>휴면 교육센터 디지털 컨버전스 과정 입니다.</p>
 						</a></li>
 					</ul>
 				</div>
-				
+
 			</section>
 
 		</section>

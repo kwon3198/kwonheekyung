@@ -81,9 +81,26 @@ width:48.69791666666667%;
 }
 .contact-section .form-box .form input:last-child{
 margin-bottom:0;
+	}
 }
+/* PC용 CSS */
+@media all and (min-width:1132px){
+/* PC CONTACT US 영역 CSS */
+	.contact-section .sec-tit{
+	float:left;
+	margin-bottom:0;
+	}
+	.contact-section .form-box{
+	float:right;
+	width:74.5583038869258%;
+	}
+	.contact-section .form-box .form, .contact-section .form-box .textarea{
+	width:48.815165876777725%;
+	}
+	.contact-section .form-box .form{
+	margon-right:2.369668246445498%;
+	}
 }
-
 </style>
 <script src="/resources/js/jquary.min.js"></script>
 <script src="/resources/js/common.js"></script>
