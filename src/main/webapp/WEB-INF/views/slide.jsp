@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <!-- 위 뷰포트 메타태그 값은 모바일 기기에서 화면을 최적화 시키는 기능이 있음(필수) -->
-<title>반응형웹의구조</title>
+<title>반응형웹의구조(권희경)</title>
 <style>
 .center {
 	margin: 0 auto;
@@ -312,9 +312,12 @@ body footer p small a:hover, body footer p small a:active {
 }
 
 ::-moz-selection {
-	background-color: #eee7dd:  
+	background-color: #eee7dd:   
 color:#542e1c
 }
+.nivo-caption { text-align:center !important; }
+.nivoSlider { height:600px !important;}
+.nivoSlider img { height:600px !important;}
 /* 태블릿 :960 이하 */
 @media all and (max-width: 960px) {
 	body section#contents li, .row .col-1, .row .col-2, .row .col-3, .row .col-4,
@@ -333,6 +336,7 @@ color:#542e1c
 	body section#contents {
 		margin-top: 90px;
 	}
+	nav > ul { display: none;}
 	/* nav > ul { display: none;} */
 	body header {
 		z-index: 999;
@@ -375,12 +379,41 @@ color:#542e1c
 		color: #fff;
 		text-shadow: none;
 	}
-	
+}
 </style>
 <script src="/resources/js/jquary.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function($) { //j쿼리 시작 : $(document).ready(function(){ }); == $(function(){ }); 과 동일  
-	});
+		//모바일메뉴 로딩시
+		var pull = $('#pull');
+		menu = $('nav > ul');
+		$(pull).on('click', function(e) {
+			var w = $(window).width();
+			if (w < 960) {
+				if (menu.is(':visible')) {
+					menu.slideToggle("fast");
+					return;
+				}
+				if (menu.is(':hidden')) {
+					menu.slideToggle("slwo");
+					return;
+				}
+			}
+		});
+		});//클릭이벤트 끝
+		//모바일 토클에 대한 스타일 -> PC에서느 없앤다.
+		jQuery(function($){ 
+          $(window).resize(function(){
+              var w=$(window).width();
+              var menu=$('nav > ul');
+              if(w>960 )	{
+                menu.removeAttr('style');
+              }else{
+
+              }
+              return;
+          });
+		});
 </script>
 </head>
 <body>
@@ -407,9 +440,33 @@ color:#542e1c
 		</div>
 	</header>
 	<!-- e:header-->
+	<script src="/resources/js/jquery.nivo.slider.js"></script>
+  	<link href="/resources/css/nivo-slider.css" rel="stylesheet" type="text/css">
+  	<script type="text/javascript">
+  	jQuery(function($) {
+  		 $('#slider').nivoSlider({
+  			effect: 'slideInLeft',
+            directionNav: true,
+            controlNav: false,
+            pauseOnHover: false,
+            prevText: '<span style="font-size:30px;color:#fff;padding-left:10px;">&lt;</span>',
+			nextText: '<span style="font-size:30px;color:#fff;padding-right:10px;">&gt</span>',
+      });
+  		$('.nivo-prevNav').on('mouseover', function(){
+            $('#slider img').attr("data-transition","slideInRight");
+       });
+       $('.nivo-nextNav').on('mouseover', function(){
+            $('#slider img').attr("data-transition","slideInLeft");
+       });
+  	});
+
+  	</script>
 	<section class="banner_slider">
 		<div id="slider" class="nivoSlider">
 			<img src="/resources/images/sun.jpg" title="슬라이드1" />
+			<img src="/resources/images/sun2.jpg" title="슬라이드2" />
+      		<img src="/resources/images/sun3.jpg" title="슬라이드3" />
+      		<img src="/resources/images/sun4.jpg" title="슬라이드4" />
 		</div>
 	</section>
 	<section id="contents" class="row">

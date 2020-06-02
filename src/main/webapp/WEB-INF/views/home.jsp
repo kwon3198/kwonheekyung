@@ -16,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/css/common.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/user.css">
 <style>
+
 .go_top {
     position: fixed;
     right: 20px;
@@ -26,7 +27,13 @@
     padding: 20px;
     opacity: 0.7;
     color : blue!importent;
+    font-family: "Nanum Gothic", "NanumGothic" !important;
     }
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+/* 구글 나눔폰트 가져오기 */
+body, h1, h2, h3, p {
+	font-family: "Nanum Gothic", "NanumGothic" !important;
+	}
 </style>
 <script src="/resources/js/jquary.min.js"></script>
 <script src="/resources/js/common.js"></script>
@@ -37,6 +44,7 @@
 </head>
 <body>
 	<!-- 더미 데이터:CSS작업전 내용 -->
+
 	<div id="wrap">
 		<header class="header cfixed">
 			<h1 class="logo">
@@ -194,6 +202,7 @@
                 </div>
             </section>
 			<footer class="footer">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.4287630290924!2d127.03674821563514!3d36.90401166954805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b215543c1914d%3A0x14b646963ad73a3d!2z7JuQ6rOo64aN7JuQ!5e0!3m2!1sko!2skr!4v1590998887130!5m2!1sko!2skr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 				<p class="copyright">LOGO</p>
 			</footer>
 	</div>
