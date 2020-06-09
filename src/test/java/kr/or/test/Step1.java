@@ -42,9 +42,7 @@ public class Step1 {
 	}
 
 	private static void printMember(String name, int age, String phoneNum) {
-		System.out.println("이름은 " + name + "입니다");
-		System.out.println("나이는 " + age + "살 입니다");
-		System.out.println("전화번호는 " + phoneNum + "입니다");
+		System.out.println("이름은: " + name + "나이는:"+ age +"전화번호는:"+ phoneNum +"입니다");
 		
 	}
 

@@ -36,10 +36,6 @@ class MemberVO {
 	}
 }
 	public class Step2 {
-
-
-
-	
 	public static void main(String[] args) {
 		System.out.println("----------------------");
 		System.out.println("클래스를 사용한 사용자정의 자료형 소스");

@@ -29,10 +29,10 @@ int week = cal.get(Calendar.DAY_OF_WEEK);
 		}
 		System.out.println("오늘 요일: "+ today + "요일");
 		
-		if(today == Week.수) {
-			System.out.println("금요일에는 요리를 합시다.");
+		if(today == Week.화) {
+			System.out.println("화요일에는 요리를 합시다.");
 		} else {
-			System.out.println("열심히 자바 공부합니다.");
+			System.out.println("열심히 요리 공부합니다.");
 		}
 	}
 }
