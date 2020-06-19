@@ -19,22 +19,22 @@ public class MainController {
 	private static final String TIME_SERVER ="pool.ntp.org";
 
 	public static void main(String[] args) throws IOException {
-		System.out.println("----------------------");
-		System.out.println("클래스를 사용한 사용자정의 자료형 소스");
+		//System.out.println("-------------------------------");
+		//System.out.println("클래스를 사용한 사용자정의 자료형 소스");
 		// =========================================== 
         // 클래스 연습: 사용자 정의 자료형 사용하기(아래)
         // ===========================================
 		// MemberVO 클래스를 사용하기 위해 new연산자를 이용해 객체(instance) 생성
 		MemberVO m1 = new MemberVO();
-		m1.setName("홍길동");
-		m1.setAge(45);
+		m1.setName("권희경");
+		m1.setAge(24);
 		m1.setPhoneNum("000-0000-0000");
 		MemberVO m2 = new MemberVO();
-		m2.setName("메롱메");
+		m2.setName("권희경");
 		m2.setAge(77);
 		m2.setPhoneNum("777-7777-7777");
 		MemberVO m3 = new MemberVO();
-		m3.setName("성춘향");
+		m3.setName("권희경");
 		m3.setAge(22);
 		m3.setPhoneNum("222-2222-2222");
 		/*System.out.println(m1.toString());
@@ -53,6 +53,7 @@ public class MainController {
 		System.out.println("-서버타임 출력하기-");
 		NTPUDPClient timeClient = new NTPUDPClient();
 		timeClient.setDefaultTimeout(1000);
+		timeClient.open();
 		try {
 			timeClient.open();
 		} catch (SocketException e) {
@@ -60,7 +61,7 @@ public class MainController {
 			e.printStackTrace();
 		}
 		InetAddress address = InetAddress.getByName(TIME_SERVER);
-	    TimeInfo timeInfo = timeClient.getTime(address);
+		TimeInfo timeInfo = timeClient.getTime(address);
 	    //서버로부터 시간 가져오는 코드
 	    long returnTime = timeInfo.getMessage().getTransmitTimeStamp().getTime();
 	    Date date = new Date(returnTime);

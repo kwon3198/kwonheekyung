@@ -34,6 +34,7 @@ class MemberVO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 }
 	public class Step2 {
 	public static void main(String[] args) {
