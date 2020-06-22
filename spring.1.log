@@ -1,0 +1,6 @@
+2020-06-22 10:42:17,595  INFO [kr.or.test.Log4jTest] test라는 매서드를 사용한 PC아이피는 : 192.168.56.1
+2020-06-22 10:42:17,595 DEBUG [kr.or.test.Log4jTest] 디버그!!MemberVO클래스 [이름은홍길동, 나이는24, 전화번호는=null]
+2020-06-22 10:42:17,595  INFO [kr.or.test.Log4jTest] 인포!!
+2020-06-22 10:42:17,595  WARN [kr.or.test.Log4jTest] 워닝!
+2020-06-22 10:42:17,595 ERROR [kr.or.test.Log4jTest] 에러!!
+2020-06-22 10:42:17,595 FATAL [kr.or.test.Log4jTest] 파탈에러!!
