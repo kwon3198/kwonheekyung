@@ -113,7 +113,7 @@
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1 class="m-0 text-dark">DashBoard Mangement</h1>
+							<h1 class="m-0 text-dark">READ BOARD</h1>
 						</div>
 						<!-- /.col -->
 						<div class="col-sm-6">
@@ -126,92 +126,97 @@
 					</div>
 					<!-- /.row -->
 
-					<!-- /.row -->
-					<div class="row">
-						<div class="col-12">
-							<div class="card">
-								<div class="card-header">
-									<h3 class="card-title">게시판 검색</h3>
+
+					<div class="col-md-12">
+						<!-- general form elements disabled -->
+						<div class="card card-warning">
+							<!-- /.card-header -->
+							<div class="card-body">
+								<div class="form-group">
+									<label>제목</label> <input type="text" class="form-control"
+										placeholder="홈페이지 오픈 테스트" disabled="">
 								</div>
-								<!-- 게시판 검색창 -->
-								<form name="form1" method="post" action="${path}/board/list.do"
-									style="border-bottom: 20px solid rgba(0, 0, 0, .125); padding: .75rem 1.25rem;">
-									<select name="searchOption">
-										<!-- 검색조건을 검색처리후 결과화면에 보여주기위해  c:out 출력태그 사용, 삼항연산자 -->
-										<option value="all">---</option>
-										<option value="writer">이름</option>
-										<option value="content">내용</option>
-										<option value="title">제목</option>
-									</select> <input name="keyword" value=""> <input type="submit"
-										value="검색">
-									<button type="button" id="btnWrite">새글쓰기</button>
+								<div class="form-group">
+									<label>내용</label>
+									<textarea class="form-control" rows="3"
+										placeholder="내용:&#13;&#10;홈페이지 오픈 테스트" disabled=""></textarea>
+								</div>
+								<div class="form-group">
+									<label>작성자</label> <input type="text" class="form-control"
+										placeholder="Enter Writer" disabled="">
+								</div>
+							</div>
+							<!-- /.container-fluid -->
+							<div class="card-body">
+								<button type="button"
+									class="btn btn-warning toastrDefaultWarning">UPDATE</button>
+								<button type="button" class="btn btn-danger toastrDefaultError">
+									DELETE</button>
+								<button type="button" class="btn btn-info toastrDefaultInfo">
+									LIST ALL</button>
+							</div>
+						</div>
+
+
+						<!-- 2번쨰 -->
+						<div class="col-md-12">
+							<!-- jquery validation -->
+							<div class="card card-primary">
+								<div class="col-sm-6">
+									<h1 class="m-0 text-dark">ADD NEW REPLY</h1>
+								</div>
+								<!-- form start -->
+								<form role="form" id="quickForm" novalidate="novalidate">
+									<div class="card-body">
+										<div class="form-group">
+											<label for="exampleInputEmail1">Writer</label> <input
+												type="email" name="email" class="form-control"
+												id="exampleInputEmail1" placeholder="USER ID">
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1">Reply text</label> <input
+												type="password" name="password" class="form-control"
+												id="exampleInputPassword1" placeholder="REPLY TEXT">
+										</div>
+									</div>
+									<!-- /.card-body -->
+									<div class="card-footer">
+										<button type="submit" class="btn btn-primary">ADD
+											REPLY</button>
+									</div>
 								</form>
-								<!-- /.card-header -->
-								<div class="card-body table-responsive p-0">
-									<table class="table table-hover text-nowrap">
-										<thead>
-											<tr>
-												<th>BNO</th>
-												<th>TITLE</th>
-												<th>WRITER</th>
-												<th>REGDATE</th>
-												<th>VIEWCNT</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>130</td>
-												<td>홈페이지 오픈테스트</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">1</span></td>
-											</tr>
-											<tr>
-												<td>124</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">2</span></td>
-											</tr>
-											<tr>
-												<td>123</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">3</span></td>
-											</tr>
-											<tr>
-												<td>122</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">4</span></td>
-											</tr>
-											<tr>
-												<td>121</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">5</span></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<!-- /.card-body -->
 							</div>
 							<!-- /.card -->
 						</div>
+						<div class="timeline">
+							<!-- timeline time label -->
+							<div class="time-label">
+								<span class="bg-green">Replies List[1]</span>
+							</div>
+							<!-- /.timeline-label -->
+							<!-- timeline item -->
+							<div>
+								<i class="fas fa-comments bg-blue"></i>
+								<div class="timeline-item">
+									<span class="time"><i class="fas fa-clock"></i> 12:05</span>
+									<h3 class="timeline-header">
+										<a href="#">26</a> -test
+									</h3>
+
+									<div class="timeline-body">댓글 테스트 입니다.</div>
+									<div class="timeline-footer">
+										<a class="btn btn-primary btn-sm">Modify</a>
+									</div>
+								</div>
+							</div>
+							<ul class="pagination justify-content-center m-0">
+								<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							</ul>
+						</div>
 					</div>
-					<button type="button" class="btn btn-info toastrDefaultInfo">CREATE</button>
-					<ul class="pagination justify-content-center m-0">
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
 				</div>
-				<!-- /.container-fluid -->
 			</div>
-			</ul>
 		</div>
-
-
 		<!-- Main Footer -->
 		<footer class="main-footer">
 			<!-- To the right -->
