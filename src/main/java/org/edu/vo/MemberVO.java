@@ -3,6 +3,17 @@ package org.edu.vo;
 import java.util.Date;
 
 public class MemberVO {
+	
+	private String user_id;
+	private String user_pw;
+	private String user_name;
+	private String email;
+	private int point;
+	private Boolean enabled;
+	private String levels;
+	private Date reg_date;
+	private Date update_date;
+	
 	public String getUser_id() {
 		return user_id;
 	}
@@ -39,11 +50,11 @@ public class MemberVO {
 	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
-	public String getLevel() {
-		return level;
+	public String getLevels() {
+		return levels;
 	}
-	public void setLevel(String level) {
-		this.level = level;
+	public void setLevels(String levels) {
+		this.levels = levels;
 	}
 	public Date getReg_date() {
 		return reg_date;
@@ -57,14 +68,12 @@ public class MemberVO {
 	public void setUpdate_date(Date update_date) {
 		this.update_date = update_date;
 	}
-	private String user_id;
-	private String user_pw;
-	private String user_name;
-	private String email;
-	private int point;
-	private Boolean enabled;
-	private String level;
-	private Date reg_date;
-	private Date update_date;
-
+	@Override
+	public String toString() {
+		return "MemberVO [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", email=" + email
+				+ ", point=" + point + ", enabled=" + enabled + ", levels=" + levels + ", reg_date=" + reg_date
+				+ ", update_date=" + update_date + "]";
+	}
+	
+	
 }

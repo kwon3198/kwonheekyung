@@ -15,17 +15,22 @@ public class OpenApi {
 	//외부연계 매서드
 	public static void serviceApi() {
 		BufferedReader br = null;//HRD넷에서 전송받은 데이터를 일시저장하는 저수지와 같은 역활
-		String urlstr = "http://www.hrd.go.kr/jsp/HRDP/HRDPO00/HRDPOA60/HRDPOA60_1.jsp?returnType=XML"
-				+"&authKey=인증키부분&pageNum=1"
-				+ "&pageSize=10&srchTraStDt=20200622&srchTraEndDt=20200922&outType=1&sort=ASC&sortCol=TR_STT_DT";
+		String urlstr = "http://www.hrd.go.kr/jsp/HRDP/HRDPO00/HRDPOA60/HRDPOA60_1.jsp?returnType="
+				+"XML&authKey=rqwQSHfGcoD1ya5s70oLiB8D35bpt0QG&pageNum=1&pageSize=10&srchTraStDt="
+				+"20200624&srchTraEndDt=20200924&outType=1&sort=ASC&sortCol=TR_STT_DT";
 		try {
+			// URL 생성
 			URL url = new URL(urlstr);
+			//openConnection 메소드를 호출 하고 이를 urlconnection에 저장
 			HttpURLConnection urlconnection = (HttpURLConnection) url.openConnection();
+			//요청방식 지정 GET이니 URL(웹 서버)로부터 리소스를 받아옴
 			urlconnection.setRequestMethod("GET");
-			 br = new BufferedReader(new InputStreamReader(urlconnection.getInputStream(),"euc-kr"));
+			br = new BufferedReader(new InputStreamReader(urlconnection.getInputStream(),"euc-kr"));
 			 String result ="";
 			 String line;
+			
 			 while((line=br.readLine()) != null) {
+				//readLine : 자바 파일 내용 한 줄씩 읽어 들이기
 				 result = result + line + "\n";
 				 //1부터 100까지 더하는 로직과 같음 
 			 }

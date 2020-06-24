@@ -1,12 +1,4 @@
-2020-06-22 10:41:45,880  INFO [kr.or.test.Log4jTest] 인포!!
-2020-06-22 10:41:45,880  WARN [kr.or.test.Log4jTest] 워닝!
-2020-06-22 10:41:45,880 ERROR [kr.or.test.Log4jTest] 에러!!
-2020-06-22 10:41:45,880 FATAL [kr.or.test.Log4jTest] 파탈에러!!
-2020-06-22 10:42:14,334  WARN [org.apache.log4j.joran.action.PriorityAction] Priority element has been deprecated, please use <level> instead.
-2020-06-22 10:42:14,350  INFO [kr.or.test.Log4jTest] test라는 매서드를 사용한 PC아이피는 : 192.168.56.1
-2020-06-22 10:42:14,350 DEBUG [kr.or.test.Log4jTest] 디버그!!MemberVO클래스 [이름은홍길동, 나이는24, 전화번호는=null]
-2020-06-22 10:42:14,350  INFO [kr.or.test.Log4jTest] 인포!!
-2020-06-22 10:42:14,350  WARN [kr.or.test.Log4jTest] 워닝!
-2020-06-22 10:42:14,350 ERROR [kr.or.test.Log4jTest] 에러!!
-2020-06-22 10:42:14,350 FATAL [kr.or.test.Log4jTest] 파탈에러!!
-2020-06-22 10:42:17,579  WARN [org.apache.log4j.joran.action.PriorityAction] Priority element has been deprecated, please use <level> instead.
+2020-06-24 14:26:31,080  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/sample/],methods=[GET]}" onto public java.lang.String org.edu.controller.HomeController.sample(java.util.Locale,org.springframework.ui.Model)
+2020-06-24 14:26:31,158  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c29daf3: startup date [Wed Jun 24 14:26:30 KST 2020]; root of context hierarchy
+2020-06-24 14:26:31,205  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c29daf3: startup date [Wed Jun 24 14:26:30 KST 2020]; root of context hierarchy
+2020-06-24 14:26:31,252  INFO [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
