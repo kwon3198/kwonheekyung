@@ -18,7 +18,7 @@
     <!-- Default to the left -->
     <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
-</div>
+
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
@@ -38,7 +38,8 @@ $(document).ready(function() {
         if(current=="/admin"||current=="/admin/") {
         	
         }else{
-        if($this.attr('href').includes(current) == true){
+        //if($this.attr('href').includes(current) == true){
+        	if($this.attr('href').indexOf(current) != -1){
             $this.addClass('active');
         }else{
         	$this.removeClass('active');

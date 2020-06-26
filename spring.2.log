@@ -1,4 +1,6 @@
-2020-06-24 14:26:31,080  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping] Mapped "{[/sample/],methods=[GET]}" onto public java.lang.String org.edu.controller.HomeController.sample(java.util.Locale,org.springframework.ui.Model)
-2020-06-24 14:26:31,158  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c29daf3: startup date [Wed Jun 24 14:26:30 KST 2020]; root of context hierarchy
-2020-06-24 14:26:31,205  INFO [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter] Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c29daf3: startup date [Wed Jun 24 14:26:30 KST 2020]; root of context hierarchy
-2020-06-24 14:26:31,252  INFO [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping] Mapped URL path [/resources/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2020-06-26 09:22:55,484  INFO [org.springframework.web.context.support.GenericWebApplicationContext] Closing org.springframework.web.context.support.GenericWebApplicationContext@5e853265: startup date [Fri Jun 26 09:22:53 KST 2020]; root of context hierarchy
+2020-06-26 09:22:55,487 DEBUG [org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
+2020-06-26 09:22:55,488 DEBUG [org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e855b5d] was not registered for synchronization because synchronization is not active
+2020-06-26 09:22:55,488 DEBUG [org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e855b5d]
+2020-06-26 09:22:55,488 DEBUG [org.springframework.jdbc.datasource.DataSourceUtils] Fetching JDBC Connection from DataSource
+2020-06-26 09:22:55,488 DEBUG [org.springframework.jdbc.datasource.SimpleDriverDataSource] Creating new JDBC Driver Connection to [jdbc:hsqldb:mem:dataSource]

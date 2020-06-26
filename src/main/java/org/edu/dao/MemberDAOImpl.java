@@ -1,12 +1,14 @@
-package org.edu.vo;
+package org.edu.dao;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
-import org.edu.dao.IF_MemberDAO;
+import org.edu.vo.MemberVO;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class MemberDAOImpl implements IF_MemberDAO {
 	
 	private static String mapperQuery ="org.edu.dao.IF_MemberDAO";
@@ -22,13 +24,12 @@ public class MemberDAOImpl implements IF_MemberDAO {
 
 	@Override
 	public List<MemberVO> selectMember() throws Exception {
-		sqlSession.selectList(mapperQuery + ".selectMember");
-		return null;
+		return sqlSession.selectList(mapperQuery + ".selectMember");
 	}
 
 	@Override
-	public void updateMember(String user_id) throws Exception {
-		sqlSession.update(mapperQuery+".updateMember", user_id);
+	public void updateMember(MemberVO memberVO) throws Exception {
+		sqlSession.update(mapperQuery+".updateMember",memberVO);
 	}
 
 	@Override
