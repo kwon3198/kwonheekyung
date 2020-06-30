@@ -28,7 +28,7 @@
 <!-- Bootstrap 4 -->
 <script src="/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="/dist/js/adminlte.min.js"></script>
+<script src="/resources/dist/js/adminlte.min.js"></script>
 <!-- footer.jsp 하단에 저장 : 아래 [클래스명을입력]부분을 학생이 채우세요... -->
 <script>
 $(document).ready(function() {

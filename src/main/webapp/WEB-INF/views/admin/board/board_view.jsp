@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../include/header.jsp" %>
 <!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
@@ -28,30 +29,28 @@
 							<!-- /.card-header -->
 							<div class="card-body">
 								<div class="form-group">
-									<label>제목</label> <input type="text" class="form-control"
-										placeholder="홈페이지 오픈 테스트" disabled="">
+									<label>제목</label> <br> ${boardVO.title}
 								</div>
 								<div class="form-group">
 									<label>내용</label>
-									<textarea class="form-control" rows="3"
-										placeholder="내용:&#13;&#10;홈페이지 오픈 테스트" disabled=""></textarea>
+									<br>
+									<textarea name="content" class="form-control" 
+									rows="3" placeholder="Enter ...">${boardVO.content}</textarea> 
 								</div>
 								<div class="form-group">
-									<label>작성자</label> <input type="text" class="form-control"
-										placeholder="Enter Writer" disabled="">
+									<label>작성자</label> <br> ${boardVO.writer}
 								</div>
 							</div>
 							<!-- /.container-fluid -->
 							<div class="card-body">
-								<button type="button"
-									class="btn btn-warning toastrDefaultWarning">UPDATE</button>
+								<a href = "/admin/board/update?bno=${boardVO.bno}"
+									class="btn btn-warning toastrDefaultWarning">UPDATE</a>
 								<button type="button" class="btn btn-danger toastrDefaultError">
 									DELETE</button>
-								<button type="button" class="btn btn-info toastrDefaultInfo">
-									LIST ALL</button>
+								<a href = "/admin/board/list" class="btn btn-info toastrDefaultInfo">
+									LIST ALL</a>
 							</div>
 						</div>
-
 
 						<!-- 2번쨰 -->
 						<div class="col-md-12">

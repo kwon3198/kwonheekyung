@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 		<!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -30,16 +31,17 @@
 							</div>
 							<!-- /.card-header -->
 							<div class="card-body">
+							<form role = "form" action="/admin/board/write" method="post">
 								<div class="form-group">
-									<label>제목</label> <input type="text" class="form-control"
+									<label>제목</label> <input name="title" type="text" class="form-control"
 										placeholder="Enter Title">
 								</div>
 								<div class="form-group">
 									<label>내용</label>
-									<textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+									<textarea name="content" class="form-control" rows="3" placeholder="Enter ..."></textarea>
 								</div>
 								<div class="form-group">
-									<label>작성자</label> <input type="text" class="form-control"
+									<label>작성자</label> <input name="writer" type="text" class="form-control"
 										placeholder="Enter Writer">
 								</div>
 								<script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -233,7 +235,7 @@
 											</tr>
 										</tbody>
 									</table>
-								</form>
+								
 								<a href="#" onclick="uploadFile(); return false;"
 									class="btn bg_01">파일 업로드</a> <label>아래 기존 파일 업로드 창 사용가능</label>
 								<input id="note-dialog-image-file-15928131774281"
@@ -242,16 +244,15 @@
 							</div>
 							<!-- /.container-fluid -->
 							<div class="card-body">
-								<button type="button"
+								<button type="submit"
 									class="btn btn-success toastrDefaultSuccess"
 									style="background-color: #ffc107;">
 									Submit
-									<style background-color:="" #ffc107="" !important;=""></style>
 								</button>
-								<button type="button" class="btn btn-info toastrDefaultInfo">
-									LIST ALL</button>
+								<a href = "/admin/board/list" class="btn btn-info toastrDefaultInfo">
+									LIST ALL</a>
 							</div>
-
+						
 						</div>
 						<!-- /.content-header -->
 
@@ -261,17 +262,11 @@
 					</div>
 					<!-- /.content-wrapper -->
 
-					<!-- Control Sidebar -->
-					<aside class="control-sidebar control-sidebar-dark">
-						<!-- Control sidebar content goes here -->
-						<div class="p-3">
-							<h5>Title</h5>
-							<p>Sidebar content</p>
-							<button type="button" class="btn btn-primary btn-lg btn-block">로그아웃</button>
-						</div>
-					</aside>
+					
 					<!-- /.control-sidebar -->
 				</div>
 			</div>
+		</form>
+		</form>
 		</div>
 <%@ include file="../include/footer.jsp" %>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../include/header.jsp" %>
+
 <!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -54,41 +56,15 @@
 											</tr>
 										</thead>
 										<tbody>
+											<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 											<tr>
-												<td>130</td>
-												<td>홈페이지 오픈테스트</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">1</span></td>
+												<td>${boardVO.bno}</td>
+												<td><a href="/admin/board/view?bno=${boardVO.bno}">${boardVO.title}</a></td>
+												<td>${boardVO.writer}</td>
+												<td>${boardVO.regdate}</td>
+												<td><span class="right badge badge-danger">${boardVO.view_count}</span></td>
 											</tr>
-											<tr>
-												<td>124</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">2</span></td>
-											</tr>
-											<tr>
-												<td>123</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">3</span></td>
-											</tr>
-											<tr>
-												<td>122</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">4</span></td>
-											</tr>
-											<tr>
-												<td>121</td>
-												<td>새로운 글을 넣습니다.</td>
-												<td>KWONheekyung</td>
-												<td>11-7-2014</td>
-												<td><span class="right badge badge-danger">5</span></td>
-											</tr>
+											</c:forEach>
 										</tbody>
 									</table>
 								</div>
@@ -97,7 +73,7 @@
 							<!-- /.card -->
 						</div>
 					</div>
-					<button type="button" class="btn btn-info toastrDefaultInfo">CREATE</button>
+					<a href = "/admin/board/write" class="btn btn-info toastrDefaultInfo">CREATE</a>
 					<ul class="pagination justify-content-center m-0">
 						<li class="page-item active"><a class="page-link" href="#">1</a></li>
 				</div>

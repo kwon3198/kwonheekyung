@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../include/header.jsp" %>
 <!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
@@ -27,57 +28,59 @@
 								<h3 class="card-title">회원가입</h3>
 							</div>
 							<div class="card-body">
+							<form role="form" action="/admin/member/write" method="post">
 								<div class="form-group">
-									<label for="exampleInputEmail1">아이디</label> <input
-										type="userid" class="form-control" id="exampleInputEmail1"
+									<label>아이디</label> <input
+										name="user_id" type="userid" class="form-control"
 										placeholder="Enter userid">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">비밀번호</label> <input
-										type="password" class="form-control"
-										id="exampleInputPassword1" placeholder="Password">
+									<label>비밀번호</label> <input
+										name="user_pw" type="password" class="form-control"
+										placeholder="Password">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">사용자 이름</label> <input
-										type="username" class="form-control"
-										id="exampleInputPassword1" placeholder="username">
+									<label>사용자 이름</label> <input
+										name="user_name" type="username" class="form-control"
+										placeholder="username">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">이메일</label> <input
-										type="email" class="form-control" id="exampleInputPassword1"
+									<label>이메일</label> <input
+										name="email" type="email" class="form-control"
 										placeholder="email">
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">포인트</label> <input
-										type="password" class="form-control"
-										id="exampleInputPassword1" placeholder="Point">
+									<label >포인트</label> <input
+										name="point" type="point" class="form-control"
+										placeholder="Point">
 								</div>
 								<div class="form-group">
-									<label>enabled</label> <select class="form-control">
-										<option>false</option>
-										<option>true</option>
+									<label>enabled</label> 
+									<select name="enabled" class="form-control">
+										<option value="0">false</option>
+										<option value="1" selected>true</option>
 									</select>
 								</div>
 									<div class="form-group">
-									<label>level</label> <select class="form-control">
-										<option>ROLE_USER</option>
-										<option>ROLE_USER 2</option>
-										<option>ROLE_USER 3</option>
+									<label>level</label> 
+									<select name="levels" class="form-control">
+										<option value="ROLE_USER">ROLE_USER</option>
+										<option value="ROLE_ADMIN">ROLE_ADMIN</option>
 									</select>
 								</div>
 								<div class="card-body">
-									<button type="button"
+									<button type="submit"
 										class="btn btn-success toastrDefaultSuccess"
 										style="background-color: #ffc107;">
 										Submit
-										<style background-color:="" #ffc107="" !important;=""></style>
 									</button>
-									<button type="button" class="btn btn-info toastrDefaultInfo">
-										LIST ALL</button>
+									<a href = "/admin/member/list" class="btn btn-info toastrDefaultInfo">
+										LIST ALL</a>
 								</div>
 							</div>
 							</div>
 						</div>
+						</form>
 					</div>
 					<!-- /.container-fluid -->
 				</div>
