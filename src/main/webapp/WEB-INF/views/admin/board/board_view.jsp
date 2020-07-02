@@ -28,6 +28,7 @@
 						<div class="card card-warning">
 							<!-- /.card-header -->
 							<div class="card-body">
+							<form role="form" action="/admin/board/delete" method="post">
 								<div class="form-group">
 									<label>제목</label> <br> ${boardVO.title}
 								</div>
@@ -40,12 +41,15 @@
 								<div class="form-group">
 									<label>작성자</label> <br> ${boardVO.writer}
 								</div>
+								<div class="form-group">
+									<label>FileDownload</label> <br> ${boardVO.files[0]}
+								</div>
 							</div>
 							<!-- /.container-fluid -->
 							<div class="card-body">
 								<a href = "/admin/board/update?bno=${boardVO.bno}"
 									class="btn btn-warning toastrDefaultWarning">UPDATE</a>
-								<button type="button" class="btn btn-danger toastrDefaultError">
+								<button type="submit" class="btn btn-danger toastrDefaultError">
 									DELETE</button>
 								<a href = "/admin/board/list" class="btn btn-info toastrDefaultInfo">
 									LIST ALL</a>
@@ -78,7 +82,6 @@
 										<button type="submit" class="btn btn-primary">ADD
 											REPLY</button>
 									</div>
-								</form>
 							</div>
 							<!-- /.card -->
 						</div>
@@ -110,5 +113,7 @@
 					</div>
 				</div>
 			</div>
+			<input type="hidden" name="bno" value="${boardVO.bno}">
+			</form>
 		</div>
 <%@ include file="../include/footer.jsp" %>

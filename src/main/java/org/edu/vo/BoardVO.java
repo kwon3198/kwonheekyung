@@ -3,7 +3,6 @@ package org.edu.vo;
 import java.util.Date;
 
 public class BoardVO {
-	
 	private Integer bno;
 	private String title;
 	private String content;
@@ -12,6 +11,8 @@ public class BoardVO {
 	private Date update_date;
 	private int view_count;
 	private int reply_count;
+	
+	private String[] files;//첨부파일용 변수 추가
 	
 	public Integer getBno() {
 		return bno;
@@ -40,8 +41,8 @@ public class BoardVO {
 	public Date getRegdate() {
 		return regdate;
 	}
-	public void setRegdate(Date reg_date) {
-		this.regdate = reg_date;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 	public Date getUpdate_date() {
 		return update_date;
@@ -68,10 +69,13 @@ public class BoardVO {
 				+ regdate + ", update_date=" + update_date + ", view_count=" + view_count + ", reply_count="
 				+ reply_count + "]";
 	}
-	
+	public String[] getFiles() {
+		return files;
+	}
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
 	
 	
 	
 }
-
-

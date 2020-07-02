@@ -2,11 +2,6 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ include file="../include/header.jsp" %>
-<script>
-if('${msg}' == "success"){
-	alert("수정에 성공하엿습니다.!");
-}
-</script>
 <!-- Content Wrapper. Contains page content -->
 		<div class="content-wrapper">
 			<!-- Content Header (Page header) -->
@@ -25,6 +20,7 @@ if('${msg}' == "success"){
 					<div class="card card-warning">
 						<!-- /.card-header -->
 						<div class="card-body">
+						<form role="form" action="/admin/member/delete" method="post">
 							<div class="form-group">
 								<label>user-id</label> <br> ${memberVO.user_id} 
 							</div>
@@ -49,7 +45,7 @@ if('${msg}' == "success"){
 						<div class="card-body">
 							<a href = "/admin/member/update?user_id=${memberVO.user_id}"
 								class="btn btn-warning toastrDefaultWarning">UPDATE</a>
-							<button type="button" class="btn btn-danger toastrDefaultError">
+							<button type="submit" class="btn btn-danger toastrDefaultError">
 								DELETE</button>
 							<a href="/admin/member/list" class="btn btn-info toastrDefaultInfo">
 								LIST ALL</a>
@@ -57,5 +53,7 @@ if('${msg}' == "success"){
 					</div>
 				</div>
 			</div>
+			<input type="hidden" name="user_id" value="${memberVO.user_id}">
+			</form>
 		</div>
 <%@ include file="../include/footer.jsp" %>

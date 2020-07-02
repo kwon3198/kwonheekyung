@@ -33,13 +33,16 @@
 <script>
 $(document).ready(function() {
     var current = location.pathname;
+    //alert(current.split("/",3)[2]);//디버그 코드
+    var current_split = current.split("/",3)[2];//board 또는 member
     $('.nav-treeview li a').each(function(){
         var $this = $(this);
+
         if(current=="/admin"||current=="/admin/") {
         	
         }else{
         //if($this.attr('href').includes(current) == true){
-        	if($this.attr('href').indexOf(current) != -1){
+        	if($this.attr('href').indexOf(current_split) != -1){
             $this.addClass('active');
         }else{
         	$this.removeClass('active');

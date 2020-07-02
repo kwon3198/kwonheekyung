@@ -31,7 +31,7 @@
 							</div>
 							<!-- /.card-header -->
 							<div class="card-body">
-							<form role = "form" action="/admin/board/write" method="post">
+							<form role = "form" action="/admin/board/write" method="post" enctype="multipart/form-data">
 								<div class="form-group">
 									<label>제목</label> <input name="title" type="text" class="form-control"
 										placeholder="Enter Title">
@@ -238,9 +238,8 @@
 								
 								<a href="#" onclick="uploadFile(); return false;"
 									class="btn bg_01">파일 업로드</a> <label>아래 기존 파일 업로드 창 사용가능</label>
-								<input id="note-dialog-image-file-15928131774281"
-									class="note-image-input form-control-file note-form-control note-input"
-									type="file" name="files" accept="image/*" multiple="multiple">
+								<br>
+							<td><input type="file" value="파일 선택" name="file" /></td>
 							</div>
 							<!-- /.container-fluid -->
 							<div class="card-body">
