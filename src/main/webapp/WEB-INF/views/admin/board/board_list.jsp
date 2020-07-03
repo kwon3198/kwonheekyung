@@ -74,8 +74,13 @@
 						</div>
 					</div>
 					<a href = "/admin/board/write" class="btn btn-info toastrDefaultInfo">CREATE</a>
-					<ul class="pagination justify-content-center m-0">
-						<li class="page-item active"><a class="page-link" href="#">1</a></li>
+					<ul class="pagination" style="position:relative;left:40%;">
+                <li class="page-item"><a href="#" class="page-link">«</a></li>
+                <li class="page-item"><a href="#" class="page-link">1</a></li>
+                <li class="page-item"><a href="#" class="page-link">2</a></li>
+                <li class="page-item"><a href="#" class="page-link">3</a></li>
+                <li class="page-item"><a href="#" class="page-link">»</a></li>
+             </ul>
 				</div>
 				<!-- /.container-fluid -->
 			</div>

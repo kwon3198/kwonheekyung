@@ -3,7 +3,6 @@ package org.edu.dao;
 import java.util.List;
 
 import org.edu.vo.BoardVO;
-import org.edu.vo.MemberVO;
 
 public interface IF_BoardDAO {
 	public void insertBoard(BoardVO boardVO) throws Exception;
@@ -14,4 +13,5 @@ public interface IF_BoardDAO {
 	public void insertAttach(String fullName) throws Exception; 
 	public List<String> selectAttach(Integer bno) throws Exception;
 	public void deleteAttach(Integer bno) throws Exception;
+	public void updateAttach(String fullName, Integer bno) throws Exception;
 }	

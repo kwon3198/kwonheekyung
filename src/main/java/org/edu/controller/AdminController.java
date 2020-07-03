@@ -53,7 +53,7 @@ public class AdminController {
  * 파일 업로드 메서드(공통)
  * @throws IOException
  **/
-		public String[] fileupload(MultipartFile file) throws IOException {
+		public String[] fileUpload(MultipartFile file) throws IOException {
 			String originalName = file.getOriginalFilename();// jsp에서 전송받은 파일의 이름 가져옴
 			UUID uid = UUID.randomUUID();// 랜덤문자 구하기
 			String saveName = uid.toString() + "." + originalName.split("\\.")[1];// 한글 파일명 처리 때문에...
@@ -118,7 +118,7 @@ public class AdminController {
 			// 첨부파일 없이 저장
 			boardService.insertBoard(boardVO);
 		} else {
-			String[] files = fileupload(file);
+			String[] files = fileUpload(file);
 			boardVO.setFiles(files);
 			boardService.insertBoard(boardVO);
 		}
@@ -139,12 +139,28 @@ public class AdminController {
 	}
 
 	@RequestMapping(value = "/admin/board/update", method = RequestMethod.POST)
-	public String boardUpdate(MultipartFile flie,BoardVO boardVO, Locale locale, RedirectAttributes rdat) throws Exception {
+	public String boardUpdate(MultipartFile file,BoardVO boardVO, Locale locale, RedirectAttributes rdat) throws Exception {
+		if(file.getOriginalFilename() == "") {//조건:첨부파일 전송 값이 없다면
 		boardService.updateBoard(boardVO);
+		}else {
+			//기존등록된 첨부파일 삭제처리(아래)
+			List<String> delFiles = boardService.selectAttach(boardVO.getBno());
+			for(String fileName : delFiles) {
+				//실제파일 삭제
+				File target = new File(uploadPath,fileName);
+				if(target.exists()) { //조건:해당경로에 파일명이 존재하면
+					target.delete();//파일삭제
+				}
+			}//end for
+			//아래 신규파일 업로드
+			String[] files = fileUpload(file);//실제파일 업로드후 파일명 리턴
+			boardVO.setFiles(files);//데이터베이스 -VO -DAO클래스
+			boardService.updateBoard(boardVO);
+		}//End if
 		rdat.addFlashAttribute("msg", "수정");
 		return "redirect:/admin/board/view?bno=" + boardVO.getBno();
 	}
-
+	
 	/**
 	 * 게시물관리 > 삭제 입니다.
 	 * 
@@ -156,7 +172,6 @@ public class AdminController {
 		List<String> files = boardService.selectAttach(bno);
 		boardService.deleteBoard(bno);
 		// 첨부파일 삭제(아래)
-		
 		for (String fileName : files) {
 			// 삭제 명령문 추가(아래)
 			File target = new File(uploadPath, fileName);
