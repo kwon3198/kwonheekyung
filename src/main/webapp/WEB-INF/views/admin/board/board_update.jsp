@@ -243,13 +243,14 @@
 							</div>
 							<!-- /.container-fluid -->
 							<div class="card-body">
-								<input type="hidden" value="${boardVO.bno}" name="bno">
+								<input type="hidden" value="${boardVO.bno}"name="bno">
+								<input type="hidden" value="${pageVO.page}" name="page">
 								<button type="submit"
 									class="btn btn-success toastrDefaultSuccess"
 									style="background-color: #ffc107;">
 									Submit
 								</button>
-								<a href = "/admin/board/list" class="btn btn-info toastrDefaultInfo">
+								<a href = "/admin/board/list?page=${pageVO.page}" class="btn btn-info toastrDefaultInfo">
 									LIST ALL</a>
 							</div>
 						

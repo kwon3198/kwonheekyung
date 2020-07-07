@@ -31,17 +31,14 @@
 									<h3 class="card-title">게시판 검색</h3>
 								</div>
 								<!-- 게시판 검색창 -->
-								<form name="form1" method="post" action="${path}/board/list.do"
+								<form action="/admin/board/list"
 									style="border-bottom: 20px solid rgba(0, 0, 0, .125); padding: .75rem 1.25rem;">
-									<select name="searchOption">
+									<select name="searchType">
 										<!-- 검색조건을 검색처리후 결과화면에 보여주기위해  c:out 출력태그 사용, 삼항연산자 -->
-										<option value="all">---</option>
-										<option value="writer">이름</option>
-										<option value="content">내용</option>
-										<option value="title">제목</option>
-									</select> <input name="keyword" value=""> 
-									<input type="submit" name="search_keyword" value="검색">
-									<button type="button" id="btnWrite">새글쓰기</button>
+										<option value="all">전체</option>
+
+									</select> <input name="searchKeyword" value=""> 
+									<input type="submit" value="검색">
 								</form>
 								<!-- /.card-header -->
 								<div class="card-body table-responsive p-0">
@@ -59,7 +56,7 @@
 											<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 											<tr>
 												<td>${boardVO.bno}</td>
-												<td><a href="/admin/board/view?bno=${boardVO.bno}">${boardVO.title}</a></td>
+												<td><a href="/admin/board/view?bno=${boardVO.bno}&page=${pageVO.page}">${boardVO.title}</a></td>
 												<td>${boardVO.writer}</td>
 												<td>${boardVO.regdate}</td>
 												<td><span class="right badge badge-danger">${boardVO.view_count}</span></td>
@@ -73,14 +70,24 @@
 							<!-- /.card -->
 						</div>
 					</div>
+					<nav aria-label="Contacts Page Navigation">
 					<a href = "/admin/board/write" class="btn btn-info toastrDefaultInfo">CREATE</a>
 					<ul class="pagination" style="position:relative;left:40%;">
-                <li class="page-item"><a href="#" class="page-link">«</a></li>
-                <li class="page-item"><a href="#" class="page-link">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link">»</a></li>
+					<c:if test="${pageVO.prev}">
+					<li class="page-item">
+					<a class="page-link" href="/admin/board/list?page=${pageVO.startPage - 1}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}">이전</a>
+					</li>
+					</c:if>
+					<c:forEach begin="${pageVO.startPage}" end="${pageVO.endPage}" var="idx">
+					 <li class='page-item <c:out value="${idx==pageVO.page?'active':''}"/>'><a href="/admin/board/list?page=${idx}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}" class="page-link">${idx}</a></li>
+					</c:forEach>
+					<c:if test="${pageVO.next}">
+					<li class="page-item">
+					<a class="page-link" href="/admin/board/list?page=${pageVO.endPage + 1}&searchType=${pageVO.searchType}&searchKeyword=${pageVO.searchKeyword}">다음</a>
+					</li>
+					</c:if>
              </ul>
+             </nav>
 				</div>
 				<!-- /.container-fluid -->
 			</div>

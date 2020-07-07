@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.edu.dao.IF_BoardDAO;
 
 import org.edu.vo.BoardVO;
+import org.edu.vo.PageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Service;
@@ -33,8 +34,8 @@ public class BoardServiceImpl implements IF_BoardService {
 	}
 
 	@Override
-	public List<BoardVO> selectBoard() throws Exception {
-		return boardDAO.selectBoard();
+	public List<BoardVO> selectBoard(PageVO pageVO) throws Exception {
+		return boardDAO.selectBoard(pageVO);
 	}
 
 	@Transactional
@@ -66,6 +67,11 @@ public class BoardServiceImpl implements IF_BoardService {
 	@Override
 	public List<String> selectAttach(Integer bno) throws Exception {
 		return boardDAO.selectAttach(bno);
+	}
+
+	@Override
+	public int countBno(PageVO pageVO) throws Exception {
+		return boardDAO.countBno(pageVO);
 	}
 
 }

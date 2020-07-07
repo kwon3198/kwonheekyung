@@ -10,15 +10,18 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import org.edu.service.IF_BoardService;
 import org.edu.service.IF_MemberService;
 import org.edu.vo.BoardVO;
 import org.edu.vo.MemberVO;
+import org.edu.vo.PageVO;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -49,31 +52,42 @@ public class AdminController {
 		response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
 		return new FileSystemResource(file);
 	}
-/**
- * 파일 업로드 메서드(공통)
- * @throws IOException
- **/
-		public String[] fileUpload(MultipartFile file) throws IOException {
-			String originalName = file.getOriginalFilename();// jsp에서 전송받은 파일의 이름 가져옴
-			UUID uid = UUID.randomUUID();// 랜덤문자 구하기
-			String saveName = uid.toString() + "." + originalName.split("\\.")[1];// 한글 파일명 처리 때문에...
-			String[] files = new String[] { saveName };// 형변환
-			byte[] fileData = file.getBytes();
-			File target = new File(uploadPath, saveName);
-			FileCopyUtils.copy(fileData, target);
-			return files;
-		}
+
+	/**
+	 * 파일 업로드 메서드(공통)
+	 * 
+	 * @throws IOException
+	 **/
+	public String[] fileUpload(MultipartFile file) throws IOException {
+		String originalName = file.getOriginalFilename();// jsp에서 전송받은 파일의 이름 가져옴
+		UUID uid = UUID.randomUUID();// 랜덤문자 구하기
+		String saveName = uid.toString() + "." + originalName.split("\\.")[1];// 한글 파일명 처리 때문에...
+		String[] files = new String[] { saveName };// 형변환
+		byte[] fileData = file.getBytes();
+		File target = new File(uploadPath, saveName);
+		FileCopyUtils.copy(fileData, target);
+		return files;
+	}
+
 	/**
 	 * 게시물관리 리스트 입니다.
 	 * 
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/admin/board/list", method = RequestMethod.GET)
-	public String boardList(Locale locale, Model model) throws Exception {
-		List<BoardVO> list = boardService.selectBoard();
+	public String boardList(@ModelAttribute("pageVO") PageVO pageVO, Locale locale, Model model) throws Exception {
+		// PageVO pageVO = new PageVO();//매개변수로 받기전 테스트용
+		if (pageVO.getPage() == null) {
+			pageVO.setPage(1); // 초기 page변수값 지정
+		}
+
+		pageVO.setPerPageNum(10);// 페이지당 보여줄 게시물 수 강제지정
+		pageVO.setTotalCount(boardService.countBno(pageVO));// 강제로 입력한 값을 쿼리로 대체함!
+		List<BoardVO> list = boardService.selectBoard(pageVO);
 		// 모델클래스로 jsp화면으로 boardService에서 셀렉트한 list값을 boardList변수명으로 보낸다.
 		// model { list -> boardList -> jsp }
 		model.addAttribute("boardList", list);
+		model.addAttribute("pageVO", pageVO);
 		return "admin/board/board_list";
 	}
 
@@ -83,7 +97,8 @@ public class AdminController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/admin/board/view", method = RequestMethod.GET)
-	public String boardView(@RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
+	public String boardView(@ModelAttribute("pageVO") PageVO pageVO, @RequestParam("bno") Integer bno, Locale locale,
+			Model model) throws Exception {
 		BoardVO boardVO = boardService.viewBoard(bno);
 		// 여기서 부터 첨부파일명 출력물
 		List<String> files = boardService.selectAttach(bno);
@@ -97,6 +112,7 @@ public class AdminController {
 		boardVO.setFiles(filenames);// String[]
 		// 여기까지 첨부파일 때문에 추가
 		model.addAttribute("boardVO", boardVO);
+		model.addAttribute("pageVO", pageVO);
 		return "admin/board/board_view";
 	}
 
@@ -107,12 +123,12 @@ public class AdminController {
 	 */
 	@RequestMapping(value = "/admin/board/write", method = RequestMethod.GET)
 	public String boardWrite(Locale locale, Model model) throws Exception {
-
+		
 		return "admin/board/board_write";
 	}
 
 	@RequestMapping(value = "/admin/board/write", method = RequestMethod.POST)
-	public String boardWrite(MultipartFile file, BoardVO boardVO, Locale locale, RedirectAttributes rdat)
+	public String boardWrite(MultipartFile file,@Valid BoardVO boardVO, Locale locale, RedirectAttributes rdat)
 			throws Exception {
 		if (file.getOriginalFilename() == "") {
 			// 첨부파일 없이 저장
@@ -132,35 +148,37 @@ public class AdminController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/admin/board/update", method = RequestMethod.GET)
-	public String boardUpdate(@RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
+	public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,@RequestParam("bno") Integer bno, Locale locale, Model model) throws Exception {
 		BoardVO boardVO = boardService.viewBoard(bno);
 		model.addAttribute("boardVO", boardVO);
+		model.addAttribute("pageVO",pageVO);
 		return "admin/board/board_update";
 	}
 
 	@RequestMapping(value = "/admin/board/update", method = RequestMethod.POST)
-	public String boardUpdate(MultipartFile file,BoardVO boardVO, Locale locale, RedirectAttributes rdat) throws Exception {
-		if(file.getOriginalFilename() == "") {//조건:첨부파일 전송 값이 없다면
-		boardService.updateBoard(boardVO);
-		}else {
-			//기존등록된 첨부파일 삭제처리(아래)
-			List<String> delFiles = boardService.selectAttach(boardVO.getBno());
-			for(String fileName : delFiles) {
-				//실제파일 삭제
-				File target = new File(uploadPath,fileName);
-				if(target.exists()) { //조건:해당경로에 파일명이 존재하면
-					target.delete();//파일삭제
-				}
-			}//end for
-			//아래 신규파일 업로드
-			String[] files = fileUpload(file);//실제파일 업로드후 파일명 리턴
-			boardVO.setFiles(files);//데이터베이스 -VO -DAO클래스
+	public String boardUpdate(@ModelAttribute("pageVO") PageVO pageVO,MultipartFile file,@Valid BoardVO boardVO, Locale locale, RedirectAttributes rdat)
+			throws Exception {
+		if (file.getOriginalFilename() == "") {// 조건:첨부파일 전송 값이 없다면
 			boardService.updateBoard(boardVO);
-		}//End if
+		} else {
+			// 기존등록된 첨부파일 삭제처리(아래)
+			List<String> delFiles = boardService.selectAttach(boardVO.getBno());
+			for (String fileName : delFiles) {
+				// 실제파일 삭제
+				File target = new File(uploadPath, fileName);
+				if (target.exists()) { // 조건:해당경로에 파일명이 존재하면
+					target.delete();// 파일삭제
+				}
+			} // end for
+				// 아래 신규파일 업로드
+			String[] files = fileUpload(file);// 실제파일 업로드후 파일명 리턴
+			boardVO.setFiles(files);// 데이터베이스 -VO -DAO클래스
+			boardService.updateBoard(boardVO);
+		} // End if
 		rdat.addFlashAttribute("msg", "수정");
-		return "redirect:/admin/board/view?bno=" + boardVO.getBno();
+		return "redirect:/admin/board/view?bno=" + boardVO.getBno() + "&page=" + pageVO.getPage();
 	}
-	
+
 	/**
 	 * 게시물관리 > 삭제 입니다.
 	 * 
