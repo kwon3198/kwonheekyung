@@ -43,11 +43,11 @@
 						</div>
 						<!-- /.container-fluid -->
 						<div class="card-body">
-							<a href = "/admin/member/update?user_id=${memberVO.user_id}"
+							<a href = "/admin/member/update?user_id=${memberVO.user_id}&page=${pageVO.page}"
 								class="btn btn-warning toastrDefaultWarning">UPDATE</a>
 							<button type="submit" class="btn btn-danger toastrDefaultError">
 								DELETE</button>
-							<a href="/admin/member/list" class="btn btn-info toastrDefaultInfo">
+							<a href="/admin/member/list?page=${pageVO.page}" class="btn btn-info toastrDefaultInfo">
 								LIST ALL</a>
 						</div>
 					</div>

@@ -78,11 +78,12 @@
 										style="background-color: #ffc107;">
 										Submit
 									</button>
-									<a href = "/admin/member/list" class="btn btn-info toastrDefaultInfo">
+									<a href = "/admin/member/list?page=${pageVO.page}" class="btn btn-info toastrDefaultInfo">
 										LIST ALL</a>
 								</div>
 							</div>
 							</div>
+							<input type = "hidden" name="page" value="${pageVO.page}">
 						</div>
 						</form>
 					</div>

@@ -36,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where 1=1
 		<include refid="sqlWhere"></include>
 		order by bno DESC
-		limit #{startBno}, #{perPageNum}
+		limit #{startNo}, #{perPageNum}
 	</select>
 	<select id= "countBno" resultType="int">
 		select count(*) from tbl_board

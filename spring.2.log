@@ -1,6 +1,6 @@
-2020-06-26 09:22:55,484  INFO [org.springframework.web.context.support.GenericWebApplicationContext] Closing org.springframework.web.context.support.GenericWebApplicationContext@5e853265: startup date [Fri Jun 26 09:22:53 KST 2020]; root of context hierarchy
-2020-06-26 09:22:55,487 DEBUG [org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
-2020-06-26 09:22:55,488 DEBUG [org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e855b5d] was not registered for synchronization because synchronization is not active
-2020-06-26 09:22:55,488 DEBUG [org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@e855b5d]
-2020-06-26 09:22:55,488 DEBUG [org.springframework.jdbc.datasource.DataSourceUtils] Fetching JDBC Connection from DataSource
-2020-06-26 09:22:55,488 DEBUG [org.springframework.jdbc.datasource.SimpleDriverDataSource] Creating new JDBC Driver Connection to [jdbc:hsqldb:mem:dataSource]
+2020-07-08 12:25:15,383  INFO [org.springframework.web.context.support.GenericWebApplicationContext] Closing org.springframework.web.context.support.GenericWebApplicationContext@1e6d1014: startup date [Wed Jul 08 12:25:13 KST 2020]; root of context hierarchy
+2020-07-08 12:25:15,387 DEBUG [org.mybatis.spring.SqlSessionUtils] Creating a new SqlSession
+2020-07-08 12:25:15,387 DEBUG [org.mybatis.spring.SqlSessionUtils] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79349652] was not registered for synchronization because synchronization is not active
+2020-07-08 12:25:15,388 DEBUG [org.mybatis.spring.SqlSessionUtils] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79349652]
+2020-07-08 12:25:15,388 DEBUG [org.springframework.jdbc.datasource.DataSourceUtils] Fetching JDBC Connection from DataSource
+2020-07-08 12:25:15,388 DEBUG [org.springframework.jdbc.datasource.SimpleDriverDataSource] Creating new JDBC Driver Connection to [jdbc:hsqldb:mem:dataSource]
