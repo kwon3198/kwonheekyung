@@ -38,8 +38,8 @@
 								</div>
 								<div class="form-group">
 									<label>비밀번호</label> <input
-										value="${memberVO.user_pw}" name="user_pw" type="password" class="form-control"
-										placeholder="Password">
+										value="" name="user_pw" type="password" class="form-control"
+										placeholder="${memberVO.user_pw}">
 								</div>
 								<div class="form-group">
 									<label>사용자 이름</label> <input
