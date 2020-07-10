@@ -5,7 +5,7 @@
     <!-- Control sidebar content goes here -->
     <div class="p-3">
       <h5>Title</h5>
-      <button type="button" class="btn btn-primary btn-lg btn-block">로그아웃</button>
+      <a href="/logout" type="button" class="btn btn-primary btn-lg btn-block">로그아웃</a>
     </div>
   </aside>
   <!-- /.control-sidebar -->

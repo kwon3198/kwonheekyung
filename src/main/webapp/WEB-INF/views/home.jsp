@@ -11,14 +11,14 @@
                         <div class="roll_content">
                             <a href="/resources/home/javascript:;">
                             <img src="/resources/home/img/img_slidecontents01.png" alt="OOOO OOOOO OOOO OOOOO, 스프링... OOOO OOOOO?"></a>
-                            <p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+                            <p class="roll_txtline">대한민국 각지역별 스시야</p>
                         </div>
                     </li>
                     <li class="imglist1">
                         <div class="roll_content">
                             <a href="/resources/home/javascript:;">
                             <img src="/resources/home/img/img_slidecontents02.png" alt="OOOO OOOOOOOOO OOOOO 스프링정보, 스프링... OOOO OOOOO?"></a>
-                            <p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+                            <p class="roll_txtline">예약수 TOP20<br> 믿고 예약하는 20곳의 레스토랑</p>
                         </div>
                     </li>
                     <li class="imglist2">

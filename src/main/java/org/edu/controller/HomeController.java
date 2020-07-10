@@ -5,9 +5,12 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.edu.service.IF_MemberService;
+import org.edu.vo.MemberVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
@@ -26,25 +29,30 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 public class HomeController {
 	
+	@Inject
+	private IF_MemberService memberService;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	/**
 	 * 스프링 security-context.xml설정한 로그인 처리 결과 확인
+	 * @throws Exception 
 	 * 
 	 * 
 	 * **/
 	@RequestMapping(value = "/login_success", method = RequestMethod.GET)
-	public String login_success(Locale locale,HttpServletRequest request, RedirectAttributes rdat) {
+	public String login_success(Locale locale,HttpServletRequest request, RedirectAttributes rdat) throws Exception {
 		logger.info("Welcome login_success! The client locale is {}.", locale);
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		String username = "";//anonymousUser
+		String userid = "";//아이디
 		String levels = "";//ROLE_ANONYMOUS
 		Boolean enabled = false;
 		Object principal = authentication.getPrincipal();
 		if (principal instanceof UserDetails) {
+			//인증이 처리되는 로직(아이디 ,암호를 스프링시큐리티에 던져주고 인증은 스프링에서 알아서 해줌
 			enabled = ((UserDetails)principal).isEnabled();
 		}
 		HttpSession session = request.getSession();
-		if (enabled) {
+		if (enabled) { //인증처리가 완료된 사용자의 권한체크(아래)
 			Collection<? extends GrantedAuthority>  authorities = authentication.getAuthorities();
 			if(authorities.stream().filter(o -> o.getAuthority().equals("ROLE_ANONYMOUS")).findAny().isPresent())
 			{levels = "ROLE_ANONYMOUS";}
@@ -52,12 +60,17 @@ public class HomeController {
 			{levels = "ROLE_USER,";}
 			if(authorities.stream().filter(o -> o.getAuthority().equals("ROLE_ADMIN")).findAny().isPresent())
 			{levels = "ROLE_ADMIN";}
-			username =((UserDetails)principal).getUsername();
+			userid =((UserDetails)principal).getUsername();
 			//로그인 세션 저장
 			session.setAttribute("session_enabled", enabled);//인증확인
-			session.setAttribute("session_username", username);//사용자명
+			session.setAttribute("session_userid", userid);//사용자ID
 			session.setAttribute("session_levels", levels);//사용자권한
-        	}
+			//=========상단은 스프링시큐리티에서 기본제공 변수처리
+			//========= 하단은우리가 추가하는 세션 변수처리
+			//회원이름 구하기 추가
+			MemberVO memberVO = memberService.viewMember(userid);
+			session.setAttribute("session_username", memberVO.getUser_name());//사용자명
+		}
 		rdat.addFlashAttribute("msg", "로그인");//result 데이터를 숨겨서 전송
 		return "redirect:/";//새로고침 자동 등록 방지를 위해서 아래처럼 처리
 	}
