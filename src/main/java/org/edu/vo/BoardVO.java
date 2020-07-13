@@ -15,7 +15,6 @@ public class BoardVO {
 	private Date update_date;
 	private int view_count;
 	private int reply_count;
-	
 	private String[] files;//첨부파일용 변수 추가
 	
 	public Integer getBno() {

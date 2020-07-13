@@ -102,11 +102,11 @@
 				<div class="bbs_line">
 					<h3>NOTICE</h3>
 					<ul class="notice_recent">
+						<c:forEach items="${boardList}" var="boardVO" varStatus="status">
+						
 						<li><a href="/resources/home/javascript:;">OOOO OOOOO (스프링OOOO OOOOO)</a></li>
-						<li><a href="/resources/home/javascript:;">OOOO OOOOOOOOO OOOOO</a></li>
-						<li><a href="/resources/home/javascript:;">OOOO OOOOO/OOOO OOOOO</a></li>
-						<li><a href="/resources/home/javascript:;">OOOO OOOOO OPEN! (스프링정보, OOOO OOOOO)</a></li>
-						<li><a href="/resources/home/javascript:;">OOOO OOOOO 서비스 점검 안내</a></li>
+					<li><a href="/board/view?bno=${boardVO.bno}&page=${pageVO.page}">${boardVO.title}</a></li>
+					</c:forEach>
 					</ul>
 				</div>
 			</div>

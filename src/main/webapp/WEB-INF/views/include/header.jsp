@@ -39,18 +39,19 @@
 			<!-- header_cont -->
 			<div class="header_cont">
 				<ul class="util clear">
-				<c:choose>
+				
+				<c:choose> 
 					<c:when test ="${session_enabled eq 'true'}">
 					<li><span style="color:white">${session_username}님[${session_userid}] 환영합니다.!</span>
 					</li>
 					<li><a href="/logout">로그아웃</a>
 					</li>
-					<c:if test="${session_levels eq 'ROLE_ADMIN'}">
+					<c:if test="${session_levels eq 'ROLE_ADMIN'}"> 
 						<li><a href="/admin">관리자</a>
 						</li>
 					</c:if>
 					</c:when>
-					<c:otherwise>
+					<c:otherwise> 
 						<li><a href="/login">로그인</a></li>
 						<li><a href="#">회원가입</a></li>
 					</c:otherwise>
@@ -67,10 +68,10 @@
                             </ul>
                         </div>
 					</li>
-					<li><a href="#" class="openAll2">고객센터</a>
+					<li><a href="/board/list" class="openAll2">고객센터</a>
 				        <div class="gnb_depth gnb_depth2_2">
                             <ul class="submenu_list">
-                                <li><a href="#">공지사항</a></li>
+                                <li><a href="/board/list">공지사항</a></li>
                             </ul>
                         </div>
 					</li>
