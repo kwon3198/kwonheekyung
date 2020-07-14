@@ -495,7 +495,7 @@ margin-left: auto !important;
   	});
   	
   	</script>
-	<section class="banner_slider">
+	<section class="banner_slider" >
 	
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">

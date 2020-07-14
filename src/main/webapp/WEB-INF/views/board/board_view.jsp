@@ -27,18 +27,20 @@
 				<li class="bbs_date">조회수 : <span class="right badge badge-danger">${boardVO.view_count}</span></li>
 				<li class="bbs_content">
 					<div class="editer_content">
-					   ${boardVO.content}
+					  <textarea style="width:100%;min-height:200px;">${boardVO.content}</textarea> 
                     </div>
 				</li>
+				<c:if test="${boardVO.files[0] != null}">
 				<li class="bbs_content">
 				<a href="/download?filename=${boardVO.files[0]}">${boardVO.files[0]} 다운로드</a>
 				<br>
 				<c:set var="extName" value="${fn:split(boardVO.files[0],'.')}" />
 				<c:set var="ext" value="${extName[fn:length(extName)-1]}"/>
-				<c:if test="${ext eq 'jpg'}">
-				<img src="/download?filename=${boardVO.files[0]}" title="첨부파일 이미지">
+				<c:if test="${fn:containsIgnoreCase(extNameArray , ext)}">
+				<img src="/download?filename=${boardVO.files[0]}" title="첨부파일 이미지" style="width:100%;">
 				</c:if>
 				</li>
+			</c:if>
 			</ul>
 			<p class="btn_line txt_right">
 				<a href="/board/list?page=${pageVO.page}" class="btn_bbs">목록</a>

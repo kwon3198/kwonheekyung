@@ -41,7 +41,7 @@
 					</ul>
 					<p class="btn_line">
 						<p class="btn_line"><a href="notice_list.html" class="btn_baseColor">등록</a>
-						<a href="notice_list.html" class="btn_baseColor">목록</a></p>
+						<a href="/board/list" class="btn_baseColor">목록</a></p>
 						
 					</p>
 				</ul>
