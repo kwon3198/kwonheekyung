@@ -5,6 +5,7 @@ import java.util.Date;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class BoardVO {
+	private String type;
 	private Integer bno;
 	@NotBlank(message="게시물제목은 필수 입력 사항 입니다")
 	private String title;
@@ -65,7 +66,12 @@ public class BoardVO {
 	public void setReply_count(int reply_count) {
 		this.reply_count = reply_count;
 	}
-	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	@Override
 	public String toString() {
 		return "BoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", writer=" + writer + ", regdate="

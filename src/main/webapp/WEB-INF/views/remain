@@ -1,0 +1,82 @@
+---------------홈 메인롤러 ----------------
+<div class="main_rolling_pc">
+		<div class="visualRoll">
+			<ul class="viewImgList">
+				<li class="imglist0"
+					<div class="roll_content">
+						<a href="/resources/home/javascript:;"> <img
+							src="/resources/home/img/img_slidecontents01.png"
+							alt="OOOO OOOOO OOOO OOOOO, 스프링... OOOO OOOOO?"></a>
+						<p class="roll_txtline">대한민국 각지역별 스시야</p>
+					</div>
+				</li>
+				<li class="imglist1">
+					<div class="roll_content">
+						<a href="/resources/home/javascript:;"> <img
+							src="/resources/home/img/img_slidecontents02.png"
+							alt="OOOO OOOOOOOOO OOOOO 스프링정보, 스프링... OOOO OOOOO?"></a>
+						<p class="roll_txtline">
+							예약수 TOP20<br> 믿고 예약하는 20곳의 레스토랑
+						</p>
+					</div>
+				</li>
+				<li class="imglist2">
+					<div class="roll_content">
+						<a href="/resources/home/javascript:;"> <img
+							src="/resources/home/img/img_slidecontents03.png"
+							alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?"></a>
+						<p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
+					</div>
+				</li>
+			</ul>
+
+			<div class="rollbtnArea">
+				<ul class="rollingbtn">
+					<li class="seq butt0"><a href="#butt"><img
+							src="/resources/home/img/btn_rollbutt_on.png" alt="1번" /></a></li>
+					<li class="seq butt1"><a href="#butt"><img
+							src="/resources/home/img/btn_rollbutt_off.png" alt="2번" /></a></li>
+					<li class="seq butt2"><a href="#butt"><img
+							src="/resources/home/img/btn_rollbutt_off.png" alt="3번" /></a></li>
+					<li class="rollstop"><a href="#" onclick="return false"
+						class="stop"><img src="/resources/home/img/btn_roll_stop.png"
+							alt="멈춤" /></a></li>
+					<li class="rollplay"><a href="#" onclick="return false"
+						class="play"><img src="/resources/home/img/btn_roll_play.png"
+							alt="재생" /></a></li>
+				</ul>
+			</div>
+			<!-- //rollbtnArea -->
+
+		</div>
+		<!-- //visualRoll -->
+	</div>
+	<!-- //main_rolling_pc -->\
+	<div class="main_rolling_mobile">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<a href="/resources/home/javascript:;"><img
+						src="/resources/home/img/mainslide_mob01.jpg"
+						alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
+				</div>
+				<div class="swiper-slide">
+					<a href="/resources/home/javascript:;"><img
+						src="/resources/home/img/mainslide_mob02.jpg"
+						alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
+				</div>
+				<div class="swiper-slide">
+					<a href="/resources/home/javascript:;"><img
+						src="/resources/home/img/mainslide_mob03.jpg"
+						alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+			<!-- <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div> -->
+
+		</div>
+		<!--//swiper-container-->
+	</div>
+	<!--//main_rolling_mobile -->
+	

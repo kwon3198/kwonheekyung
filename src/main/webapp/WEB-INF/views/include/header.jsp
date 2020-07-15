@@ -71,7 +71,7 @@
 					<li><a href="javascript:;" class="openAll3">커뮤니티</a>
                         <div class="gnb_depth gnb_depth2_3">
                             <ul class="submenu_list">
-                                <li><a href="javascript:;">실시간리뷰</a></li>
+                                <li><a href="/board/mainlist">실시간리뷰</a></li>
                             </ul>
                         </div>
 					</li>

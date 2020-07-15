@@ -49,6 +49,25 @@ public class AdminController {
 	
 	
 	/**
+	 * 메인게시물관리 리스트 입니다.
+	 * @throws Exception 
+	 */
+	@RequestMapping(value = "/board/mainlist", method = RequestMethod.GET)
+	public String boardMainList(@ModelAttribute("pageVO") PageVO pageVO, Locale locale, Model model) throws Exception {
+		//PageVO pageVO = new PageVO();//매개변수로 받기전 테스트용
+		if(pageVO.getPage() == null) {
+			pageVO.setPage(1);//초기 page변수값 지정
+		}
+		pageVO.setPerPageNum(10);//1페이지당 보여줄 게시물 수 강제지정
+		pageVO.setTotalCount(boardService.countBno(pageVO));//강제로 입력한 값을 쿼리로 대체OK.
+		List<BoardVO> list = boardService.selectBoard(pageVO);
+		//모델클래스로 jsp화면으로 boardService에서 셀렉트한 list값을 boardList변수명으로 보낸다.
+		//model { list -> boardList -> jsp }
+		model.addAttribute("boardList", list);
+		model.addAttribute("pageVO", pageVO);
+		return "admin/board/board_mainlist";
+	}
+	/**
 	 * 게시물관리 리스트 입니다.
 	 * @throws Exception 
 	 */

@@ -3,89 +3,172 @@
 <%@ include file="include/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="/resources/dist/css/slider-pro.min.css" media="screen"/>
+<link rel="stylesheet" type="text/css" href="/resources/examples/css/examples.css" media="screen"/>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
 <!-- Content Wrapper. Contains page content -->
 <div id="container">
-	<div class="main_rolling_pc">
-		<div class="visualRoll">
-			<ul class="viewImgList">
-				<li class="imglist0">
-					<div class="roll_content">
-						<a href="/resources/home/javascript:;"> <img
-							src="/resources/home/img/img_slidecontents01.png"
-							alt="OOOO OOOOO OOOO OOOOO, 스프링... OOOO OOOOO?"></a>
-						<p class="roll_txtline">대한민국 각지역별 스시야</p>
-					</div>
-				</li>
-				<li class="imglist1">
-					<div class="roll_content">
-						<a href="/resources/home/javascript:;"> <img
-							src="/resources/home/img/img_slidecontents02.png"
-							alt="OOOO OOOOOOOOO OOOOO 스프링정보, 스프링... OOOO OOOOO?"></a>
-						<p class="roll_txtline">
-							예약수 TOP20<br> 믿고 예약하는 20곳의 레스토랑
-						</p>
-					</div>
-				</li>
-				<li class="imglist2">
-					<div class="roll_content">
-						<a href="/resources/home/javascript:;"> <img
-							src="/resources/home/img/img_slidecontents03.png"
-							alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?"></a>
-						<p class="roll_txtline">OOOO OOOOOOOOO OOOOOOOOO OOOOO</p>
-					</div>
-				</li>
-			</ul>
 
-			<div class="rollbtnArea">
-				<ul class="rollingbtn">
-					<li class="seq butt0"><a href="#butt"><img
-							src="/resources/home/img/btn_rollbutt_on.png" alt="1번" /></a></li>
-					<li class="seq butt1"><a href="#butt"><img
-							src="/resources/home/img/btn_rollbutt_off.png" alt="2번" /></a></li>
-					<li class="seq butt2"><a href="#butt"><img
-							src="/resources/home/img/btn_rollbutt_off.png" alt="3번" /></a></li>
-					<li class="rollstop"><a href="#" onclick="return false"
-						class="stop"><img src="/resources/home/img/btn_roll_stop.png"
-							alt="멈춤" /></a></li>
-					<li class="rollplay"><a href="#" onclick="return false"
-						class="play"><img src="/resources/home/img/btn_roll_play.png"
-							alt="재생" /></a></li>
-				</ul>
+<!-- 테스트 슬라이드 -->
+	<div id="example1" class="slider-pro">
+		<div class="sp-slides">
+			<div class="sp-slide">
+				<img class="sp-image" src="/resources/src/css/images/blank.gif"
+					data-src="/resources/src/css/images/test1.jpg"
+					data-retina="/resources/src/css/images/test1.jpg"/>
+				
+				<p class="sp-layer sp-white sp-padding"
+					data-horizontal="50" data-vertical="50"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="400" data-hide-delay="200">
+					test1
+				</p>
+
+				<p class="sp-layer sp-black sp-padding hide-small-screen"
+					data-horizontal="180" data-vertical="50"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="600" data-hide-delay="100">
+					test1
+				</p>
+
+				<p class="sp-layer sp-white sp-padding hide-medium-screen"
+					data-horizontal="315" data-vertical="50"
+					data-show-transition="left" data-hide-transition="up" data-show-delay="800">
+					test1
+				</p>
 			</div>
-			<!-- //rollbtnArea -->
 
-		</div>
-		<!-- //visualRoll -->
-	</div>
-	<!-- //main_rolling_pc -->
+	        <div class="sp-slide">
+	        	<img class="sp-image" src="/resources/src/css/images/blank.gif"
+	        		data-src="/resources/src/css/images/test2.jpg"
+	        		data-retina="/resources/src/css/images/test2.jpg/">
 
-	<div class="main_rolling_mobile">
-		<div class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<a href="/resources/home/javascript:;"><img
-						src="/resources/home/img/mainslide_mob01.jpg"
-						alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/resources/home/javascript:;"><img
-						src="/resources/home/img/mainslide_mob02.jpg"
-						alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
-				</div>
-				<div class="swiper-slide">
-					<a href="/resources/home/javascript:;"><img
-						src="/resources/home/img/mainslide_mob03.jpg"
-						alt="OOOO OOOOO 믿을 수 있는 스프링정보, 스프링... OOOO OOOOO?" /></a>
-				</div>
+				<h3 class="sp-layer sp-black sp-padding" 
+					data-horizontal="40" data-vertical="10%" 
+					data-show-transition="left" data-hide-transition="left">
+					test2
+				</h3>
+
+				<p class="sp-layer sp-white sp-padding hide-medium-screen" 
+					data-horizontal="40" data-vertical="22%" 
+					data-show-transition="left" data-show-delay="200" data-hide-transition="left" data-hide-delay="200">
+					test2
+				</p>
+
+				<p class="sp-layer sp-black sp-padding hide-small-screen" 
+					data-horizontal="40" data-vertical="34%" data-width="350" 
+					data-show-transition="left" data-show-delay="400" data-hide-transition="left" data-hide-delay="500">
+					test2
+				</p>
 			</div>
-			<div class="swiper-pagination"></div>
-			<!-- <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div> -->
 
+			<div class="sp-slide">
+				<img class="sp-image" src="/resources/src/css/images/blank.gif"
+					data-src="/resources/src/css/images/test3.jpg"
+					data-retina="/resources/src/css/images/test1.jpg"/>
+
+				<p class="sp-layer sp-white sp-padding" 
+					data-position="centerCenter" data-vertical="-50" 
+					data-show-transition="right" data-hide-transition="left" data-show-delay="500" >
+					test3
+				</p>
+
+				<p class="sp-layer sp-black sp-padding hide-small-screen" 
+					data-position="centerCenter" data-vertical="50" 
+					data-show-transition="left" data-show-delay="700" data-hide-transition="right" data-hide-delay="200">
+					test3
+				</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="/resources/src/css/images/blank.gif"
+					data-src="/resources/src/css/images/test4.jpg"
+					data-retina="/resources/src/css/images/test4.jpg"/>
+
+				<p class="sp-layer sp-black sp-padding" 
+					data-position="bottomLeft"
+					data-show-transition="up" data-hide-transition="down">
+					test4<span class="hide-small-screen">
+					test4</span>
+					 <span class="hide-medium-screen">test4
+					 </span>
+				</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="/resources/src/css/images/blank.gif"
+					data-src="/resources/src/css/images/test5.jpg"
+					data-retina="/resources/src/css/images/test5.jpg"/>
+
+				<p class="sp-layer sp-white sp-padding" 
+					data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-show-transition="down" data-show-delay="400" data-hide-transition="up">
+					test5 <span class="hide-small-screen">test5</span> <span class="hide-medium-screen">test5</span>
+				</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="/resources/src/css/images/blank.gif"
+					data-src="/resources/src/css/images/test6.jpg"
+					data-retina="/resources/src/css/images/test6.jpg"/>
+
+				<p class="sp-layer sp-white sp-padding" 
+					data-horizontal="10" data-vertical="10" data-width="35%">
+					test6 <span class="hide-small-screen">test6</span> <span class="hide-medium-screen">test6</span>
+				</p>
+			</div>
+
+			<div class="sp-slide">
+				<img class="sp-image" src="/resources/src/css/images/blank.gif"
+					data-src="/resources/src/css/images/test7.jpg"
+					data-retina="/resources/src/css/images/test2.jpg"/>
+
+				<p class="sp-layer sp-black sp-padding" 
+					data-position="bottomLeft" data-vertical="10" data-horizontal="2%" data-width="96%" 
+					data-show-transition="up" data-show-delay="400" data-hide-transition="down">
+					test7 <span class="hide-small-screen">test7</span> <span class="hide-medium-screen">test7</span>
+				</p>
+			</div>
+
+		<div class="sp-thumbnails">
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">가케 우동</div>
+				<div class="sp-thumbnail-description">가장 일반적인 우동</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">test2</div>
+				<div class="sp-thumbnail-description">test2</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">test3</div>
+				<div class="sp-thumbnail-description">test3</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">test4</div>
+				<div class="sp-thumbnail-description">test4</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">test5</div>
+				<div class="sp-thumbnail-description">test5</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">test6</div>
+				<div class="sp-thumbnail-description">test6</div>
+			</div>
+
+			<div class="sp-thumbnail">
+				<div class="sp-thumbnail-title">test7</div>
+				<div class="sp-thumbnail-description">test7</div>
+			</div>
 		</div>
-		<!--//swiper-container-->
-	</div>
-	<!--//main_rolling_mobile -->
+		</div>
+    </div>
+	<!-- 테스트 end -->
 
 	<!-- about_area -->
 	<div class="about_area">
@@ -151,4 +234,27 @@
 
 </div>
 <!-- //container -->
+<script type="text/javascript" src="/resources/dist/js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript">
+$( document ).ready(function( $ ) {
+		$( '#example1' ).sliderPro({
+			width: 1230,
+			height: 600,
+			arrows: true,
+			buttons: false,
+			waitForLayers: true,
+			thumbnailWidth: 200,
+			thumbnailHeight: 100,
+			thumbnailPointer: true,
+			autoplay: true,
+			autoScaleLayers: false,
+			breakpoints: {
+				500: {
+					thumbnailWidth: 120,
+					thumbnailHeight: 50
+				}
+			}
+		});
+	});
+</script>
 <%@ include file="include/footer.jsp"%>
