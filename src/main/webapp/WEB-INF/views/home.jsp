@@ -5,60 +5,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!-- Content Wrapper. Contains page content -->
 <div id="container">
-
-	<!--  //부트스트랩 
-    <link href="/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요
-    <script src="/resources/bootstrap/js/bootstrap.min.js"></script>
-  	<script>
-  	jQuery(function($) {
-  		$('.carousel').carousel({
-  		  interval: 2000,
-  		  pause: false
-  		})
-  	});
-  	
-  	</script>
-	<section class="banner_slider" >
-	
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="/resources/images/sun.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="item">
-      <img src="/resources/images/sun2.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="item">
-      <img src="/resources/images/sun3.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="item">
-      <img src="/resources/images/sun4.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <a class="left carousel-control" style="font-size:40px;font-weight:bold;" href="#carouselExampleInterval" data-slide="prev" onclick="$('#myCarousel').carousel('prev')">
-  <span class="slide_arrow">&lt;</span> 
-  </a>
-  <a class="right carousel-control" style="font-size:40px;font-weight:bold;" href="#carouselExampleInterval" data-slide="next" onclick="$('#myCarousel').carousel('next')">
-  <span class="slide_arrow">&gt;</span>
-  </a>
- 
-  <a class="left carousel-control" href="#carouselExampleInterval" role="button" data-slide="prev">
-   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-  </a>
-  <a class="right carousel-control" href="#carouselExampleInterval" role="button" data-slide="next">
-   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-  </a>
-</div>
-</div>
-	</section> -->
-
 	<div class="main_rolling_pc">
 		<div class="visualRoll">
 			<ul class="viewImgList">
@@ -150,7 +96,7 @@
 				<ul class="place_list box_inner clear">
 					<c:forEach items="${boardList}" var="boardVO" varStatus="status">
 						<c:if test="${status.count <= 3}">
-						<li><a href="/board/view?bno=${boardVO.bno}">
+						<li><a href="/board/view?bno=${boardVO.bno}&page=1">
 								<!-- 첨부파일이 있을때 if -->
 								<c:if test="${boardVO.files[0] != null }">
 									<c:set var="extName" value="${fn:split(boardVO.files[0],'.')}" />
@@ -195,7 +141,7 @@
 				</h3>
 				<ul class="notice_recent">
 					<c:forEach items="${boardList}" var="boardVO" varStatus="status">
-						<li><a href="/board/view?bno=${boardVO.bno}">${boardVO.title}</a></li>
+						<li><a href="/board/view?bno=${boardVO.bno}&page=1">${boardVO.title}</a></li>
 					</c:forEach>
 				</ul>
 			</div>

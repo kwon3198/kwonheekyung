@@ -232,5 +232,30 @@
 	<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- AdminLTE App -->
 	<script src="dist/js/adminlte.min.js"></script>
+	<script>
+	//--------------고전적인 자바스크립트 방식
+	function myFunc() {//function 함수이름{}
+		alert('테스트')
+	}
+	myFunc();//함수호출==실행
+	$(document).ready(function(){
+			alert('테스트2');
+			var cnt = 131;
+			$(".toastrDefaultInfo").bind("click",function(event) {
+			$("<tr><td>"+cnt+"</td><td>한줄추가</td><td>내용추가</td><td>2020.07.15</td><td>100</td></tr>").prependTo("table");
+			cnt = cnt +1;
+			});
+			//$("table thead tr").css({"background-color":"red"});
+			//$("#searchType").css({"width":"150px"});//#는 id명,제이쿼리JS
+			//document.getElementById("searchType").style.width="300px";//오리지널 JS
+			//$(".toastrDefaultInfo").css({"background-color":"red"});//$(.버튼클래스명)
+			//$("tr").css("background-color","red");
+			//$("tr").css({"background-color":"red","color":"blue"});
+	});
+	//============/
+	//function () { // 콜백함수 호출없이 실행
+		//alert('테스트')
+	//}
+	</script>
 </body>
 </html>

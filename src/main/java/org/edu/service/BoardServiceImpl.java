@@ -61,6 +61,7 @@ public class BoardServiceImpl implements IF_BoardService {
 
 	@Override
 	public BoardVO viewBoard(Integer bno) throws Exception {
+		boardDAO.updateViewCount(bno);
 		return boardDAO.viewBoard(bno);
 	}
 
@@ -73,5 +74,4 @@ public class BoardServiceImpl implements IF_BoardService {
 	public int countBno(PageVO pageVO) throws Exception {
 		return boardDAO.countBno(pageVO);
 	}
-
 }

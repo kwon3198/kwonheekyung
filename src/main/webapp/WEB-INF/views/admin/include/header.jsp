@@ -105,6 +105,10 @@
 												class="nav-link"> <i class="far fa-circle nav-icon"></i>
 													<p>게시물관리</p>
 											</a></li>
+											<!-- <li class="nav-item"><a href="/admin/board/Mainlist"
+												class="nav-link"> <i class="far fa-circle nav-icon"></i>
+													<p>메인 게시물 관리</p>
+											</a></li> -->
 										</ul></li>
 								</ul>
 							</nav> <!-- /.sidebar-menu -->
