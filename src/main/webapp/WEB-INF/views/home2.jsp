@@ -212,7 +212,7 @@
 	<!-- about_area -->
 	<div class="about_area">
 		<h2>
-			<b>실시간 리뷰</b>
+			<b>공지사항</b>
 		</h2>
 		<div class="about_box">
 				<ul class="place_list box_inner clear">

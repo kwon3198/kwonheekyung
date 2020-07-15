@@ -68,6 +68,13 @@
                             </ul>
                         </div>
 					</li>
+					<li><a href="javascript:;" class="openAll3">커뮤니티</a>
+                        <div class="gnb_depth gnb_depth2_3">
+                            <ul class="submenu_list">
+                                <li><a href="javascript:;">실시간리뷰</a></li>
+                            </ul>
+                        </div>
+					</li>
 					<li><a href="/board/list" class="openAll2">고객센터</a>
 				        <div class="gnb_depth gnb_depth2_2">
                             <ul class="submenu_list">
