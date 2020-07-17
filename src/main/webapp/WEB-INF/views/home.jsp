@@ -8,6 +8,30 @@
 <link rel="stylesheet" type="text/css" href="/resources/examples/css/examples.css" media="screen"/>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
+<script type="text/javascript" src="/resources/dist/js/jquery.sliderPro.min.js"></script>
+<script type="text/javascript">
+$( document ).ready(function( $ ) {
+		$( '#example1' ).sliderPro({
+			width: 1230,
+			height: 600,
+			arrows: true,
+			buttons: false,
+			waitForLayers: true,
+			thumbnailWidth: 200,
+			thumbnailHeight: 100,
+			thumbnailPointer: true,
+			autoplay: true,
+			autoScaleLayers: false,
+			breakpoints: {
+				500: {
+					thumbnailWidth: 120,
+					thumbnailHeight: 50
+				}
+			}
+		});
+	});
+</script>
+
 <!-- Content Wrapper. Contains page content -->
 <div id="container">
 
@@ -234,27 +258,4 @@
 
 </div>
 <!-- //container -->
-<script type="text/javascript" src="/resources/dist/js/jquery.sliderPro.min.js"></script>
-<script type="text/javascript">
-$( document ).ready(function( $ ) {
-		$( '#example1' ).sliderPro({
-			width: 1230,
-			height: 600,
-			arrows: true,
-			buttons: false,
-			waitForLayers: true,
-			thumbnailWidth: 200,
-			thumbnailHeight: 100,
-			thumbnailPointer: true,
-			autoplay: true,
-			autoScaleLayers: false,
-			breakpoints: {
-				500: {
-					thumbnailWidth: 120,
-					thumbnailHeight: 50
-				}
-			}
-		});
-	});
-</script>
 <%@ include file="include/footer.jsp"%>

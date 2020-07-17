@@ -240,11 +240,17 @@
 	myFunc();//함수호출==실행
 	$(document).ready(function(){
 			alert('테스트2');
+			$(".even_tanle tbody tr:even").css({"backgrond-color":"black",})
 			var cnt = 131;
-			$(".toastrDefaultInfo").bind("click",function(event) {
-			$("<tr><td>"+cnt+"</td><td>한줄추가</td><td>내용추가</td><td>2020.07.15</td><td>100</td></tr>").prependTo("table");
-			cnt = cnt +1;
+			$(".btn-primary").bind("click",function(event){
+				$(".even_table tbody tr").each(function(index,item){
+					$(item).addClass("hong_" + index); //class="hong_0"
+				})
+				//$("<tr><td>"+cnt+"</td><td>한줄추가</td><td>내용추가</td><td>2020.07.15</td><td>100</td></tr>").prependTo("table");
+				//cnt = cnt +1;
+			})
 			});
+			//$(".toastrDefaultInfo").bind("click",function(event) {
 			//$("table thead tr").css({"background-color":"red"});
 			//$("#searchType").css({"width":"150px"});//#는 id명,제이쿼리JS
 			//document.getElementById("searchType").style.width="300px";//오리지널 JS
